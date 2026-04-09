@@ -4,10 +4,12 @@ import "@fontsource/inter/latin-400.css";
 import "@fontsource/inter/latin-600.css";
 import "@fontsource/lora/400.css";
 import "@fontsource/lora/600.css";
+import "@fontsource/fira-code/latin-400.css";
 import inter400 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
 import inter600 from "@fontsource/inter/files/inter-latin-600-normal.woff2";
 import lora400 from "@fontsource/lora/files/lora-latin-400-normal.woff2";
 import lora600 from "@fontsource/lora/files/lora-latin-600-normal.woff2";
+import firaCode400 from "@fontsource/fira-code/files/fira-code-latin-400-normal.woff2";
 
 import { ClientRouter } from "astro:transitions";
 import { SITE } from "@consts";
@@ -26,9 +28,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/x-icon" href="/favicon-light.svg">
+<link rel="icon" type="image/png" href="/favicon.png" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
@@ -36,6 +36,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 <link rel="preload" href={inter600} as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href={lora400} as="font" type="font/woff2" crossorigin/>
 <link rel="preload" href={lora600} as="font" type="font/woff2" crossorigin/>
+<link rel="preload" href={firaCode400} as="font" type="font/woff2" crossorigin/>
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

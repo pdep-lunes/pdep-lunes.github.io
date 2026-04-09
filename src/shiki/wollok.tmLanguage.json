@@ -1,0 +1,70 @@
+{
+  "name": "Wollok",
+  "scopeName": "source.wlk",
+  "fileTypes": ["wlk", "wtest", "wpgm"],
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#string" },
+    { "include": "#keyword-control" },
+    { "include": "#keyword-declaration" },
+    { "include": "#keyword-modifier" },
+    { "include": "#constant-language" },
+    { "include": "#number" },
+    { "include": "#operator" },
+    { "include": "#type-name" }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.wollok",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.wollok",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "string": {
+      "name": "string.quoted.double.wollok",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.wollok",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "keyword-control": {
+      "name": "keyword.control.wollok",
+      "match": "\\b(if|else|try|catch|then|always|throw|return)\\b"
+    },
+    "keyword-declaration": {
+      "name": "keyword.other.declaration.wollok",
+      "match": "\\b(class|mixin|describe|method|program|package|import|test|object|fixture|suite)\\b"
+    },
+    "keyword-modifier": {
+      "name": "storage.modifier.wollok",
+      "match": "\\b(var|const|override|native|inherits|new)\\b"
+    },
+    "constant-language": {
+      "name": "constant.language.wollok",
+      "match": "\\b(self|super|null|true|false)\\b"
+    },
+    "number": {
+      "name": "constant.numeric.wollok",
+      "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+    },
+    "operator": {
+      "name": "keyword.operator.wollok",
+      "match": "===|==|!==|!=|<=|>=|&&|\\|\\||\\.\\.\\.|\\.\\.|\\.\\*|=>|->|=|<|>|!|\\+|-|\\*|/|%|\\+\\+|--"
+    },
+    "type-name": {
+      "name": "entity.name.type.wollok",
+      "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
+    }
+  }
+}

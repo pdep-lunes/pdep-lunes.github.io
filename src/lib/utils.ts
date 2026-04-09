@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(date: Date) {
-  return Intl.DateTimeFormat("en-US", {
+  return Intl.DateTimeFormat("es-AR", {
     month: "short",
     day: "2-digit",
     year: "numeric"
@@ -17,7 +17,7 @@ export function readingTime(html: string) {
   const textOnly = html.replace(/<[^>]+>/g, "");
   const wordCount = textOnly.split(/\s+/).length;
   const readingTimeMinutes = ((wordCount / 200) + 1).toFixed();
-  return `${readingTimeMinutes} min read`;
+  return `${readingTimeMinutes} min de lectura`;
 }
 
 export function dateRange(startDate: Date, endDate?: Date | string): string {

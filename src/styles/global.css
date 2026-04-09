@@ -41,6 +41,48 @@ article {
   @apply max-w-full prose dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold prose-p:font-serif;
   @apply prose-headings:text-black prose-headings:dark:text-white;
+  @apply prose-code:font-mono;
+}
+
+article code, article pre {
+  font-variant-ligatures: none;
+}
+
+article pre {
+  tab-size: 2;
+  position: relative;
+}
+
+article pre .line {
+  display: block;
+  padding-left: 2ch;
+  text-indent: -2ch;
+}
+
+article pre[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 0.65rem;
+  font-family: 'Fira Code', monospace;
+  opacity: 0.4;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  user-select: none;
+}
+
+article :not(pre) > code {
+  @apply font-mono text-[0.875em];
+  @apply bg-black/10 dark:bg-white/10;
+  @apply rounded px-1.5 py-0.5;
+  @apply text-black dark:text-white;
+}
+
+article :not(pre) > code::before,
+article :not(pre) > code::after {
+  content: none;
 }
 
 @layer utilities {

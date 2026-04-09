@@ -11,6 +11,7 @@ export default {
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
         serif: ["Lora", ...defaultTheme.fontFamily.serif],
+        mono: ["Fira Code", ...defaultTheme.fontFamily.mono],
       },
     },
   },

@@ -9,13 +9,13 @@ export const SITE: Site = {
 };
 
 export const HOME: Metadata = {
-  TITLE: "Home",
-  DESCRIPTION: "PdeP Lunes Mañana",
+  TITLE: "Inicio",
+  DESCRIPTION: "Bitácora de clases de Paradigmas de Programación - UTN FRBA.",
 };
 
 export const BLOG: Metadata = {
   TITLE: "Bitácora",
-  DESCRIPTION: "A collection of articles on topics I am passionate about.",
+  DESCRIPTION: "Registro de las clases de Paradigmas de Programación.",
 };
 
 // export const WORK: Metadata = {
