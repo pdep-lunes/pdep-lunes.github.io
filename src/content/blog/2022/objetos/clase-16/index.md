@@ -14,13 +14,13 @@ tags: [objetos, colecciones, testing]
 En Wollok contamos con dos tipos de colecciones:
 - *listas*: en donde los elementos tienen un orden y puede haber elementos repetidos. Se definen mediante el literal `[ ]`, por ejemplo:
 
-```js
+```wollok
 var bolsaDelSuper = [leche, manteca, jugo, jugo, jugo]
 ```
 
 - *conjuntos*: no hay orden en los elementos y no puede haber elementos repetidos. Se definen mediante el literal `#{ }`, por ejemplo:
 
-```js
+```wollok
 var numeros = #{1, 2, 3, 4}
 ```
 

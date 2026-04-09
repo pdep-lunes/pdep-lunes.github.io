@@ -46,7 +46,7 @@ Buenísimo, ahora que poroto sabe jugar, enviemosle el mensaje de nuevo.
 
 Ahora queremos ver si su energía cambió, por lo que deberíamos preguntarle a poroto cuál es su energía. Para esto vamos a tener que declarar un _getter_.
 
-```
+```wollok
 method energia() {
   return energia
 }
@@ -54,7 +54,7 @@ method energia() {
 
 Si quisiéramos cambiarla, haríamos un _setter_:
 
-```
+```wollok
 method energia(unaEnergia) {
   energia = unaEnergia
 }

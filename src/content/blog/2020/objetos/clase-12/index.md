@@ -54,7 +54,7 @@ Si billy pasa a tener a sally como mascota vemos que en el diagrama tanto él co
  
 Si billy juega dos veces con sally ahora mandy no puede jugar.
 
-```
+```wollok
 billy.mascota(sally)
 billy.jugarConMascota()
 billy.jugarConMascota()

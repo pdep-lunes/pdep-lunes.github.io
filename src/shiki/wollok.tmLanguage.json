@@ -1,5 +1,6 @@
 {
   "name": "Wollok",
+  "aliases": ["wollok"],
   "scopeName": "source.wlk",
   "fileTypes": ["wlk", "wtest", "wpgm"],
   "patterns": [

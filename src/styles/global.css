@@ -51,7 +51,7 @@ article code, article pre {
 article pre {
   tab-size: 2;
   position: relative;
-  @apply leading-none;
+  @apply leading-[0.7];
 }
 
 article pre .line {
