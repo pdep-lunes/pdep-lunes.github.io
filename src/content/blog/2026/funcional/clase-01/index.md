@@ -1,6 +1,6 @@
 ---
 title: Presentación y primeros conceptos
-date: "2025-04-06"
+date: "2026-04-06"
 description: "Primera clase de PdeP"
 tags: [expresividad, declaratividad, paradigmas]
 ---
