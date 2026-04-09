@@ -1,0 +1,46 @@
+---
+type Props = {
+  tag: string;
+};
+
+const { tag } = Astro.props;
+
+const colors: Record<string, { bg: string; hover: string }> = {
+  funcional:    { bg: "rgb(98, 80, 134)",   hover: "rgba(98, 80, 134, 0.7)" },
+  tipado:       { bg: "rgb(43, 82, 255)",    hover: "rgb(102, 129, 250)" },
+  composicion:  { bg: "rgb(140, 0, 255)",    hover: "rgb(183, 95, 255)" },
+  composición:  { bg: "rgb(140, 0, 255)",    hover: "rgb(183, 95, 255)" },
+  logico:       { bg: "rgb(239, 148, 57)",   hover: "rgba(239, 148, 57, 0.7)" },
+  lógico:       { bg: "rgb(239, 148, 57)",   hover: "rgba(239, 148, 57, 0.7)" },
+  objetos:      { bg: "rgb(172, 65, 66)",    hover: "rgba(172, 65, 66, 0.7)" },
+};
+
+const color = colors[tag.toLowerCase()] ?? { bg: "rgb(181, 171, 171)", hover: "rgba(181, 171, 171, 0.7)" };
+---
+
+<span
+  class="tag"
+  style={`--bg: ${color.bg}; --hover: ${color.hover};`}
+>
+  {tag}
+</span>
+
+<style>
+  .tag {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    height: 20px;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    color: white;
+    background-color: var(--bg);
+    transition: background-color 0.1s ease-in;
+    white-space: nowrap;
+  }
+  .tag:hover {
+    background-color: var(--hover);
+  }
+</style>

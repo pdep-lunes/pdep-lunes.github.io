@@ -9,28 +9,28 @@ const data = (await getCollection("blog"))
   .filter(post => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-const currentYear = new Date().getFullYear().toString();
+const allYears = [...new Set(
+  data.map(post => post.data.date.getFullYear().toString())
+)].sort((a, b) => parseInt(b) - parseInt(a));
 
-const currentYearPosts = data.filter(
-  post => post.data.date.getFullYear().toString() === currentYear
+const latestYear = allYears[0];
+
+const latestYearPosts = data.filter(
+  post => post.data.date.getFullYear().toString() === latestYear
 );
 
-const pastYears = [...new Set(
-  data
-    .map(post => post.data.date.getFullYear().toString())
-    .filter(year => year !== currentYear)
-)].sort((a, b) => parseInt(b) - parseInt(a));
+const pastYears = allYears.slice(1);
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
   <Container>
     <div class="space-y-10">
       <div class="animate font-semibold text-black dark:text-white">
-        Bitácora {currentYear}
+        Bitácora {latestYear}
       </div>
       <div class="animate">
         <ul class="flex flex-col gap-4">
-          {currentYearPosts.map(post => (
+          {latestYearPosts.map(post => (
             <li>
               <ArrowCard entry={post} />
             </li>
