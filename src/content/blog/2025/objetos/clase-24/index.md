@@ -23,7 +23,7 @@ Como ya habíamos visto, la **herencia** la podemos utilizar cuando tenemos lóg
 
 Por ejemplo,los géneros de los juegos dentro de *Gameflix*:
 
-```java
+```wollok
 class JuegoViolento inherits Juego {
 method jugar(unUsuario,unasHoras){
 unUsuario.reducirHumor(10 * unasHoras)
@@ -66,7 +66,7 @@ Como vemos, las suscripciones cambian a lo largo del tiempo, por lo que la heren
 
 Para esto, podemos utilizar la **composición**. De esta manera, delegamos la lógica de la suscripción a una nueva clase u objeto, la cual cada cliente conocerá a una instancia de esta clase a través de un atributo:
 
-```java
+```wollok
 class Usuario {
 var suscripcion
 

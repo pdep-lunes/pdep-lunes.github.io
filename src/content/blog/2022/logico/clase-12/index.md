@@ -51,7 +51,7 @@ Ahora queremos saber el puntaje de un autor, este se calcula como `3 * cantidad 
 
 Recordemos, que en nuestra base de conocimientos, contamos con un predicado `esBestSeller/1` que nos dice si una obra es best seller.
 
-```
+```prolog
 esBestSeller(UnaObra) :-
   copiasVendidas(UnaObra, CantidadVendida),
   CantidadVendida > 50000.
@@ -59,7 +59,7 @@ esBestSeller(UnaObra) :-
 
 Por ende, podemos arrancar escribiendo un predicado que nos diga las obras que escribió un autor que son best sellers:
 
-```
+```prolog
 escribioBestSeller(Autor, Obra):-
     escribio(Autor, Obra),
     esBestSeller(Obra).
@@ -67,7 +67,7 @@ escribioBestSeller(Autor, Obra):-
 
 Y en nuestra consola podemos hacer consultas como esta:
 
-```
+```prolog
 escribioLibroBestSeller(Artista, Obra).
 Artista = elsaBornemann,
 Obra = socorro ;
@@ -89,7 +89,7 @@ Para lograr esto contamos con un predicado llamado `findall/3`. Este se escribe 
 
 Entonces, ahora podríamos escribir un predicado `obrasBestSellerQueEscribio/2` que relacione a un autor con todos las obras que escribió y que además son best sellers.
 
-```
+```prolog
 obrasBestSellerQueEscribio(Autor, Obras):-
     escribio(Autor, _),
     findall(Obra, escribioBestSeller(Autor, Obra), Obras).
@@ -97,7 +97,7 @@ obrasBestSellerQueEscribio(Autor, Obras):-
 
 Y podemos consultar:
 
-```
+```prolog
 ?- obrasBestSellerQueEscribio(Artista, Obras).
 Artista = elsaBornemann,
 Obras = [socorro] ;
@@ -113,7 +113,7 @@ Sí, ¡con un predicado 🤩! Contamos con `length(Lista, Tamanio)`, que es inve
 
 Entonces podríamos escribir:
 
-```
+```prolog
 cantidadDeObrasBestSeller(Autor, Cantidad):-
     obrasBestSellerQueEscribio(Autor, UnasObras),
     length(UnasObras, Cantidad).
@@ -121,7 +121,7 @@ cantidadDeObrasBestSeller(Autor, Cantidad):-
 
 Y ahora, por fin, ya podemos resolver nuestro problema inicial 😝:
 
-```
+```prolog
 puntaje(Autor, Puntaje):-
     cantidadDeObrasBestSeller(Autor, Cantidad),
     Puntaje is 3 * Cantidad.
@@ -129,7 +129,7 @@ puntaje(Autor, Puntaje):-
 
 Volvamos un segundo a analizar `obrasBestSellerQueEscribio`. ¿Por qué es necesario generar al autor? Probemos qué pasa sin generarlo:
 
-```
+```prolog
 ?- obrasBestSellerQueEscribio(Autor, Obras).
 Obras = [socorro, sandman, watchmen, cienBalas, elCaballeroOscuroRegresa, batmanAnioUno, americanGods, buenosPresagios, buenosPresagios|...].
 ```
@@ -138,7 +138,7 @@ Obras = [socorro, sandman, watchmen, cienBalas, elCaballeroOscuroRegresa, batman
 
 En el segundo parámetro del findall, podemos llegar a necesitar consultas más complejas. Por ejemplo, además de best sellers queremos que también le gusten a Gus, por lo que vamos a hacer obrasBestSellerQueEscribioQueLeGustanAGus 🥵:
 
-```
+```prolog
 obrasBestSellerQueEscribioQueLeGustanAGus(Autor, Obras):-
     escribio(Autor, _),
     findall(Obra, (escribioBestSeller(Autor, Obra), leGustaAGus(Obra)), Obras).
@@ -146,7 +146,7 @@ obrasBestSellerQueEscribioQueLeGustanAGus(Autor, Obras):-
 
 Es importante ver que muy probablemente si tenemos consultas compuestas en un findall, nos convendría delegar en una consulta que las abarque a ambas:
 
-```
+```prolog
 obrasBestSellerQueEscribioQueLeGustanAGus(Autor, Obras):-
     escribio(Autor, _),
     findall(Obra, esBestSellerDelGustoDeGus(Autor, Obra), Obras).
@@ -158,21 +158,21 @@ esBestSellerDelGustoDeGus(Autor, Obra):-
 
 Además de poder generar conjuntos, también podemos utilizar listas con individuos dentro de nuestro modelado. Para mostrar esto, vamos a introducir las obras fantásticas, las cuáles cuentan con un conjunto de elementos mágicos. Agreguemos el nuevo tipo de obra:
 
-```
+```prolog
 %fantastica(ElementosMágicos)
 esDeTipo(sandman, fantastica([yelmo, bolsaDeArena, rubi])).
 ```
 
 Vamos a agregar un nuevo tipo copado para las obras fantásticas: aquellas obras que tengan un rubí. ¿Cómo podemos saber si una lista incluye un elemento? Tan simple como usar el predicado `member/2`:
 
-```
+```prolog
 esTipoCopado(fantastica(ElementosMagicos)):-
   member(rubi, ElementosMagicos).
 ```
 
 Es importante tener cuidado con el uso de member. Un clásico error del paradigma lógico es utilizar un member con un conjunto armado con un findall. Cuando queremos utilizar un findall para tener un conjunto, nunca deberíamos querer saber si un elemento está dentro de ese conjunto ya que contábamos con la condición para saberlo previamente. Sigamos el siguiente ejemplo: quiero saber si una obra es best seller del gusto de Gus:
 
-```
+```prolog
 obrasBestSellerQueEscribioQueLeGustanAGus(Autor, Obras):-
     escribio(Autor, _),
     findall(Obra, (esBestSeller(Autor, Obra), leGustaA(gus, Obra)), Obras).
@@ -184,7 +184,7 @@ esBestSellerDelGustoDeGus(Obra):-
 
 Este modelo es incorrecto conceptualmente: estamos armando una lista para preguntar si un elemento está en la misma cuando podíamos resolver directamente con una consulta:
 
-```
+```prolog
 esBestSellerDelGustoDeGus(Obra):-
   esBestSeller(Obra),
   leGustaA(gus, Obra).
@@ -195,7 +195,7 @@ No necesitábamos una lista para poder cumplir el requerimiento. En este caso, n
 
 Para terminar de aclarar los conceptos, vamos a realizar otro ejercicio. Queremos saber el promedio de copias que vendió un autor en toda su vida. Para ello, podemos empezar armando un predicado que relacione un autor con cada cantidad de copias vendida por obra:
 
-```
+```prolog
 vendio(Autor, Copias):-
     escribio(Autor, Obra),
     copiasVendidas(Obra, Copias).
@@ -203,7 +203,7 @@ vendio(Autor, Copias):-
 
 Con esta información podemos armar el conjunto de copias vendidas de cada autor. ¿Y cómo sumamos la lista para obtener el promedio? ¡Fácil! Prolog nos da `sum_list`:
 
-```
+```prolog
 promedioCopiasVendidas(Autor, Promedio):-
     escribio(Autor, _),
     findall(Copias, vendio(Autor, Copias), ListaCopias),

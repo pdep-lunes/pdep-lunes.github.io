@@ -51,6 +51,7 @@ article code, article pre {
 article pre {
   tab-size: 2;
   position: relative;
+  @apply leading-none;
 }
 
 article pre .line {
@@ -74,7 +75,7 @@ article pre[data-language]::before {
 }
 
 article :not(pre) > code {
-  @apply font-mono text-[0.875em];
+  @apply font-mono text-sm;
   @apply bg-black/10 dark:bg-white/10;
   @apply rounded px-1.5 py-0.5;
   @apply text-black dark:text-white;

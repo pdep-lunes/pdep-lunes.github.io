@@ -13,7 +13,7 @@ Identidad vs Igualdad
 
 `Igualdad`: (o equivalencia) por defecto dos objetos son iguales si son idénticos, o sea si son el mismo objeto. Al mismo tiempo dos objetos que no son idénticos pueden ser iguales. La igualdad == puede ser redefinida para que funcione acorde a nuestro dominio.
 
-```
+```wollok
 object lanzamientoWindows98 {
 	const property dia = 25
 	const property mes = 6
@@ -67,7 +67,7 @@ Self
 
 Empezando a realizar el objeto `camionDeGanado`, podríamos pensar esto como primera opción:
 
-```
+```wollok
 object camionGanado {
   var kilometraje = 700000
   var cantidadVacas = 10
@@ -88,7 +88,7 @@ Self es una manera con la cual el objeto se conoce a sí mismo. Con self, puedo 
 
 Esto, con self, se puede resolver de la siguiente manera:
 
-```
+```wollok
 object camionGanado {
   var kilometraje = 700000
   var cantidadVacas = 10
@@ -105,7 +105,7 @@ Puesto rutatlántica
 
 Arrancando el puesto, podríamos hacer un primer approach:
 
-```
+```wollok
 object rutatlantica {
   method pasar(unCamion) {
     pdepCargas.cobrar(7000 + 100 * unCamion.pesoCarga() / 1000)
@@ -128,7 +128,7 @@ La `responsabilidad`, a nivel objetos, son las cosas que el objeto es responsabl
 
 Podríamos hacer un segundo approach:
 
-```
+```wollok
 object rutatlantica {
   method pasar(unCamion) {
     pdepCargas.cobrar(7000 + 100 * unCamion.pesoCarga() / 1000)
@@ -143,7 +143,7 @@ Ahora vemos que le vamos a querer decir a un camión que recorra una ruta. ¿Est
 
 De esto surge el `polimorfismo`: Queremos que `recorrerRuta(kilometraje, velocidad)` lo entiendan todos los camiones, para que rutatlántica los pueda usar indistintamente. Es decir, el `polimorfismo` en objetos es la capacidad de que un objeto pueda utilizar indistintamente a otros objetos, siendo que potencialmente estos otros sean distintos. Con esto en mente, deberíamos cambiar el método `recorrerRuta` en todos los camiones:
 
-```
+```wollok
 object camionGanado {
 	method recorrerRuta(extension, velocidad){
 		kilometraje = kilometraje + extension
@@ -178,7 +178,7 @@ Nos referimos por `responsabilidad`, en métodos, a eso que el método debe de h
 
 Esto se vería de la siguiente manera:
 
-```
+```wollok
 object rutatlantica {
 	method pasar(unCamion) {
 	  pdepCargas.cobrar(self.costo(unCamion))

@@ -99,7 +99,7 @@ Es el paradigma con el vamos a arrancar. Y trata sobre… ¡adivinaste! Funcione
 ⚠️ Antes de seguir, vamos a dejar algo en claro: **nunca pero nunca vamos a usar un `if`para devolver un `true` o un `false`.** Es una muy mala práctica de programación y quien la haga en un parcial tendrá un 2 🦆. 
 ❌ El código que **no** hay que hacer sería:
 
-```js
+```wollok
 esMayorDeEdad(unaEdad) {
 	if (unaEdad >= 18) {
 		return true
@@ -111,7 +111,7 @@ esMayorDeEdad(unaEdad) {
 
 ✔️ Lo correcto sería:
 
-```js
+```wollok
 esMayorDeEdad(unaEdad) {
 	return unaEdad >= 18
 }

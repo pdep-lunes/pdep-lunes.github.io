@@ -22,7 +22,7 @@ Pero al llegar su dueño o dueña a casa actúan distinto. Los gatos 🐈 actúa
 
 Un código posible podría ser:
 
-```
+```wollok
 class Gato {
 	var energia
 	
@@ -59,7 +59,7 @@ class Perro {
 
 Una solución sería crear una clase Animal (no es una frase onda "CREA UNA CLASE ANIMAL!!! MÁQUINA!!! 💪") que contenga la lógica repetida:
 
-```
+```wollok
 class Animal {
 	var energia
 	var sonido
@@ -76,7 +76,7 @@ class Animal {
 
 Lo único que faltaría es establecer una relación entre esta nueva clase y las originales definiendo **herencia** de la siguiente manera: 👇
 
-```
+```wollok
 class Perro inherits Animal {
 	var sonido = "guau"
 	
@@ -99,7 +99,7 @@ Listo, ¡problema solucionado! 🙌 Ahora vamos a decir que `Animal` es la **sup
 
 Siguiendo con nuestro ejemplo, imaginémonos que aparece la clase `Gallina` 🐔, cada `Gallina` emite el sonido "A River lo sigo a donde va" y cuando juegan también pierde energia, peeero también ponen un huevo 🐣. Entonces tendríamos que redefinir el método `jugar`, pero teniendo en cuenta que una parte de la lógica ya está definida en la superclase `Animal`. Para hacer esto vamos a combinar `override` (para redefinir un método de la superclase) con `super` (para ver que hace la superclase):
 
-```
+```wollok
 class Gallina inherits Animal {
 	var sonido = "A River lo sigo a donde va"
 	var huevosPuestos = 0
@@ -119,7 +119,7 @@ Esto es una decisión de nuestro diseño, si creemos que todos los animales debe
 
 Claramente no conocemos un comportamiento genérico para todos los animales, pero si queremos que todos los animales sepan recibir a su dueño sin especificar una lógica podemos crear un **método abstracto** escribiendo solo la **firma** de la siguiente manera:
 
-```
+```wollok
 class Animal {
 	….
 	method recibirDueño()
@@ -131,7 +131,7 @@ class Animal {
 
 Luego de hacer esto es importante redefinir el método en cada subclase con la palabra `override`:
 
-```
+```wollok
 class Perro inherits Animal {
 	var sonido = "guau"
 	

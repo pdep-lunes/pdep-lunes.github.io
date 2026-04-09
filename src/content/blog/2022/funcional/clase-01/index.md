@@ -45,7 +45,7 @@ Estos dos conceptos son complementarios y vamos a buscar que nuestras soluciones
 
 ¡Veamos unos ejemplos!
 
-```
+```c
 -- Solución A
 ​
 int d(int c[]) {
@@ -91,7 +91,7 @@ La solución C es la más expresiva junto con la B y es la más declarativa.
 
 Sin embargo, todas estas soluciones tienen algo en común: están escritas en el mismo lenguaje de programación. Hay otros lenguajes que facilitan que nuestras soluciones sean más declarativas. Por ejemplo, este mismo problema se podría solucionar utilizando el lenguaje Haskell, haciendo:
 
-```
+```haskell
 cantidadDeNumerosPares numeros = (length.filter even) numeros
 ```
 

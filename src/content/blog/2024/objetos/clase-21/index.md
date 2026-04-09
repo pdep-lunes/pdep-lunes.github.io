@@ -27,25 +27,25 @@ Hay dos maneras de hacerlo:
 
 - Usando el mensaje `error`, el cual entienden los objetos y nos sirve para lanzar una excepción:
 
-```java
+```wollok
 self.error("mensaje del error")
 ```
 
 - Usando throw y la clase `Exception`:
 
-```java
+```wollok
  throw new Exception(message = "mensaje del error")
 ```
 
 También podemos crear nuestras propias excepciones :wink:. Para esto podemos crear una clase que herede de `Exception`. Esto nos va a ser útil más adelante.:
 
-```java
+```wollok
 class ExcepcionParticularDelPrograma inherits Exception {}
 ```
 
 y la lanzamos como antes:
 
-```java
+```wollok
 throw new ExcepcionParticularDelPrograma(message = "mensaje del error")
 ```
 
@@ -53,7 +53,7 @@ Además, es importante que nuestros mensajes de excepción sean expresivos. Así
 
 Ahora, todo bien, pero ¿para qué me sirven en la ejecución del programa? ¿Qué hacen?
 
-```java
+```wollok
 class Summer inherits Beth{
   override method irseDeViaje(unRick) {
     if (self.esLunes()) {
@@ -76,7 +76,7 @@ Entonces, ¿si lanzamos una excepción esta _subirá_ indefinidamente? Bueno, en
 Cuando sabemos qué hacer ante una excepción, tenemos la opción de **atrapar** la excepción y utilizar otro código que se tiene que ejecutar si ocurrió tal excepción. :confetti_ball:  
 En Wollok, esto se realiza de la siguiente forma:
 
-```java
+```wollok
 try {
 	// código que puede fallar
 } catch e : ExcepcionQueQuieroAtrapar {

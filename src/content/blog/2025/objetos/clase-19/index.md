@@ -23,7 +23,7 @@ tags: [objetos, self, encapsulamiento, responsabilidad, polimorfismo]
 
 Empezando a realizar el objeto `camionDeVerduras`, podríamos pensar esto como primera opción:
 
-```
+```wollok
 object camionDeVerduras {
   var kilometraje = 700000
   var cajones = 10
@@ -44,7 +44,7 @@ Una opción podría ser `camionDeVerduras.pesoCarga()`, pero vemos que Wollok no
 
 Esto, con `self`, se puede resolver de la siguiente manera:
 
-```
+```wollok
 object camionDeVerduras {
   var kilometraje = 700000
   var cajones = 10
@@ -61,7 +61,7 @@ Hacemos el resto de los camiones, haciendo los métodos con las firmas necesaria
 
 Comenzando a codificar el puesto, podríamos hacer un primer acercamiento:
 
-```
+```wollok
 object rutatlantica {
   method pasar(unCamion) {
     pdepCargas.cobrar(7000 + 100 * unCamion.pesoCarga() / 1000)
@@ -87,7 +87,7 @@ La responsabilidad, en la programación con objetos, está relacionada con qué 
 
 Podríamos hacer un segundo acercamiento:
 
-```
+```wollok
 object rutatlantica {
   method pasar(unCamion) {
     pdepCargas.cobrar(7000 + 100 * unCamion.pesoCarga() / 1000)
@@ -104,7 +104,7 @@ Ahora vemos que le vamos a querer decir a un camión que recorra una ruta. ¿Est
 
 De esto surge el **polimorfismo**: Queremos que `recorrerRuta(kilometraje, velocidad)` lo entiendan todos los camiones, para que `rutatlantica` los pueda usar indistintamente. Es decir, el **polimorfismo** en objetos es la capacidad de que un objeto pueda utilizar indistintamente a otros objetos, siendo que potencialmente estos otros sean distintos. Con esto en mente, deberíamos cambiar el método `recorrerRuta` en todos los camiones:
 
-```
+```wollok
 object camionDeVerduras {
 	method recorrerRuta(extension, velocidad){
 		kilometraje = kilometraje + extension
@@ -139,7 +139,7 @@ Nos referimos por responsabilidad, en métodos, a eso que el método debe de hac
 
 Esto se vería de la siguiente manera:
 
-```
+```wollok
 object rutatlantica {
 	method pasar(unCamion) {
 	  pdepCargas.cobrar(self.costo(unCamion))

@@ -16,7 +16,7 @@ Así como en funcional teníamos funciones y en lógico teníamos reglas lógica
 
 Tenemos a Poroto, el perro de una familia 🐕. Por lo pronto tenemos la siguiente información acerca de Poroto: es un perro Salchicha con 500 de energía (porque todos los perros necesitan energía para hacer cosas, claro). Entonces, vamos a decir que poroto tiene como **atributos** raza y energía. 
 
-```
+```wollok
 object poroto {
   var energia = 500
   const raza = "Salchicha"
@@ -36,7 +36,7 @@ Si corremos el código anterior, ¿qué pasa?
 
 Claro, le dijimos a poroto que juegue, pero nunca le “enseñamos” cómo hacerlo. De alguna forma le tenemos que decir qué es lo que queremos que haga cuando le digamos que juegue, y esto lo hacemos con lo que llamamos un **método**. Repasando: un método es lo que un objeto hace cuando le enviamos un mensaje particular. Enseñémosle entonces a `poroto` a jugar. Vamos a querer que cuando `poroto` juegue, su energía baje 20 unidades. Esto en el código se escribe así: 👨‍💻👩‍💻
 
-```
+```wollok
 object poroto {
   var energia = 100
   const raza = "Salchicha"
@@ -51,7 +51,7 @@ Buenísimo, ahora que `poroto` sabe jugar, enviemosle el mensaje de nuevo.
 
 Ahora queremos ver si su energía cambió, por lo que deberíamos preguntarle a poroto cuál es su energía. Para esto vamos a tener que declarar un _getter_.
 
-```
+```wollok
 method energia() {
   return energia
 }
@@ -59,7 +59,7 @@ method energia() {
 
 Si quisiéramos cambiarla, haríamos un _setter_:
 
-```
+```wollok
 method energia(unaEnergia) {
   energia = unaEnergia
 }
@@ -69,7 +69,7 @@ Este tipo de métodos en los que accedemos al valor de un atributo o lo modifica
 
 Por otro lado, como todo buen perro, `poroto` tiene un ladrido. Para ello crearemos el método ladrido que retorna "¡Guau!"
 
-```
+```wollok
 method ladrido() {
   return "¡Guau!"
 }
@@ -80,7 +80,7 @@ La principal diferencia entre métodos como `ladrido` y `jugar` es que el primer
 Ahora, vamos a crear otro objeto: vamos a crear al dueño de poroto, Billy. De Billy conocemos su alegría y su mascota.
 Sabemos que Billy puede jugar con Poroto, entonces podemos hacer un método que sea `jugarConSuMascota`, el cual haga que Billy gane 50 de alegría y también hace que su mascota juegue.
 
-```
+```wollok
 object billy {
   const nombre = "William"
   var alegria = 200
@@ -96,7 +96,7 @@ object billy {
 Como vemos acá, Billy le está mandando un mensaje a su mascota, que en este caso es Poroto. Billy le dijo a su mascota jugá y Poroto jugó.
 Ahora agregamos a Mandy que tiene como mascota a su perra Sally que pierde la misma energía al jugar que Poroto. Al jugar, Mandy gana 100 de alegría y hace que su mascota juegue dos veces.
 
-```
+```wollok
 object mandy {
    const nombre = "Magdalena"
    var alegria = 200

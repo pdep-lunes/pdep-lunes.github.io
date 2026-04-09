@@ -13,7 +13,7 @@ Como ya habíamos visto, La Herencia la podemos utilizar cuando tenemos lógica 
 
 Por ejemplo, si vemos como resolvemos los géneros de los juegos dentro de *Gameflix*:
 
-```java
+```wollok
 class JuegoViolento inherits Juego {
   method jugar(unUsuario,unasHoras){
     unUsuario.reducirHumor(10 * unasHoras)
@@ -57,7 +57,7 @@ Como vemos, las suscripciones estarán cambiando a lo largo del tiempo, por lo t
 
 Para esto, podríamos utilizar la **composición**: Delegamos la lógica de la suscripción a una nueva clase, y los usuarios conocerán a una instancia de esta clase:
 
-```java
+```wollok
 class Usuario {
   var suscripcion
 
