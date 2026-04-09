@@ -1,0 +1,55 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import BackToPrev from "@components/BackToPrev.astro";
+import { BLOG } from "@consts";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog"))
+    .filter(post => !post.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  const years = [...new Set(posts.map(post => post.data.date.getFullYear().toString()))];
+
+  return years.map(year => ({
+    params: { year },
+    props: {
+      year,
+      posts: posts.filter(post => post.data.date.getFullYear().toString() === year),
+    },
+  }));
+}
+
+type Props = {
+  year: string;
+  posts: CollectionEntry<"blog">[];
+};
+
+const { year, posts } = Astro.props;
+---
+
+<PageLayout title={`Bitácora ${year}`} description={BLOG.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate">
+        <BackToPrev href="/bitacora">
+          Volver a bitácora
+        </BackToPrev>
+      </div>
+      <div class="animate font-semibold text-black dark:text-white">
+        {year}
+      </div>
+      <div class="animate">
+        <ul class="flex flex-col gap-4">
+          {posts.map(post => (
+            <li>
+              <ArrowCard entry={post} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Container>
+</PageLayout>

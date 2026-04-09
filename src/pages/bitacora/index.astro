@@ -1,0 +1,57 @@
+---
+import { getCollection } from "astro:content";
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/Container.astro";
+import ArrowCard from "@components/ArrowCard.astro";
+import { BLOG } from "@consts";
+
+const data = (await getCollection("blog"))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const currentYear = new Date().getFullYear().toString();
+
+const currentYearPosts = data.filter(
+  post => post.data.date.getFullYear().toString() === currentYear
+);
+
+const pastYears = [...new Set(
+  data
+    .map(post => post.data.date.getFullYear().toString())
+    .filter(year => year !== currentYear)
+)].sort((a, b) => parseInt(b) - parseInt(a));
+---
+
+<PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>
+  <Container>
+    <div class="space-y-10">
+      <div class="animate font-semibold text-black dark:text-white">
+        Bitácora {currentYear}
+      </div>
+      <div class="animate">
+        <ul class="flex flex-col gap-4">
+          {currentYearPosts.map(post => (
+            <li>
+              <ArrowCard entry={post} />
+            </li>
+          ))}
+        </ul>
+      </div>
+      {pastYears.length > 0 && (
+        <div class="animate space-y-3">
+          <div class="text-sm opacity-60">Años anteriores</div>
+          <div class="flex flex-wrap gap-2">
+            {pastYears.map(year => (
+              <a
+                href={`/bitacora/${year}`}
+                class="px-3 py-1.5 text-sm rounded border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"
+              >
+                {year}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </Container>
+</PageLayout>
