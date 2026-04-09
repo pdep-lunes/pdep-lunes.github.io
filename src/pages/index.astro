@@ -17,6 +17,16 @@ const blog = (await getCollection("blog"))
 <PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
   <Container>
     <div class="space-y-16">
+      <section class="animate space-y-4">
+        <h3 class="font-semibold text-xl text-black dark:text-white">
+          ¡Bienvenidos!
+        </h3>
+        <article>
+          <p>
+            Esta es la página del curso de los Lunes a la mañana de Paradigmas de Programación de la Universidad Tecnológica Nacional, Facultad Regional Buenos Aires.
+          </p>
+        </article>
+      </section>
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
@@ -42,7 +52,7 @@ const blog = (await getCollection("blog"))
         </h5>
         <article>
           <p>
-            Si tenés alguna consulta o querés comunicarte con el equipo docente, encontranos en redes o mandanos un mail.
+            Si tenés alguna consulta o querés comunicarte con el equipo docente, escribinos por discord.
           </p>
         </article>
         <ul class="flex flex-wrap gap-2">

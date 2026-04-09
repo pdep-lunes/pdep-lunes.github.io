@@ -51,10 +51,10 @@ class Gato {
 
 	method emitirSonido() {
 		return "miau"
-}
+	}
 
-method recibirDueño() {
-}
+	method recibirDueño() {
+	}
 }
 
 class Perro {
@@ -66,11 +66,11 @@ class Perro {
 
 	method emitirSonido() {
 		return "guau"
-}
+	}
 
-method recibirDueño() {
-	energia += 100
-}
+	method recibirDueño() {
+		energia += 100
+	}
 }
 ```
 
@@ -89,7 +89,7 @@ class Animal {
 
 	method emitirSonido() {
 		return sonido
-}
+	}
 }
 ```
 
@@ -98,8 +98,8 @@ Lo único que faltaría es establecer una relación entre esta nueva clase y las
 ```wollok
 class Perro inherits Animal(sonido = "guau") {
 	method recibirDueño() {
-	energia += 100
-}
+		energia += 100
+	}
 }
 
 class Gato inherits Animal(sonido = "miau") {
@@ -118,9 +118,9 @@ class Gallina inherits Animal(sonido = "A River lo sigo a donde va") {
 	var huevosPuestos = 0
 
 	override method jugar(unTiempo) {
-	super(unTiempo)
-	huevosPuestos ++
-}
+		super(unTiempo)
+		huevosPuestos ++
+	}
 }
 ```
 
@@ -149,8 +149,8 @@ Luego de hacer esto es importante redefinir el método en cada subclase con la p
 ```wollok
 class Perro inherits Animal(sonido = "guau") {
 	override method recibirDueño() {
-	energia += 100
-}
+		energia += 100
+	}
 }
 
 class Gato inherits Animal(sonido = "miau") {
@@ -158,16 +158,16 @@ class Gato inherits Animal(sonido = "miau") {
 }
 
 class Gallina inherits Animal(sonido = "A River lo sigo a donde va") {
-var huevosPuestos = 0
+	var huevosPuestos = 0
 
 	override method jugar(unTiempo) {
-	super(unTiempo)
-	huevosPuestos ++
-}
+		super(unTiempo)
+		huevosPuestos ++
+	}
 
 	override method recibirDueño() { 
-	huevosPuestos = 0 /* el dueño llega y le roba los huevos*/
-}
+		huevosPuestos = 0 /* el dueño llega y le roba los huevos*/
+	}
 }
 ```
 

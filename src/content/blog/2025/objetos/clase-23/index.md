@@ -57,8 +57,6 @@ class Summer inherits Beth{
       throw new NoPuedoIrmeDeViajeException(message = "¡Sólo puedo irme de aventura los lunes!")
     }
   }
-
-
 }
 ```
 
