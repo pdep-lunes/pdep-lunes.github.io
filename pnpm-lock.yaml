@@ -26,11 +26,11 @@ importers:
       '@fontsource/fira-code':
         specifier: ^5.2.7
         version: 5.2.7
-      '@fontsource/inter':
-        specifier: ^5.0.17
-        version: 5.2.8
       '@fontsource/lora':
         specifier: ^5.0.16
+        version: 5.2.8
+      '@fontsource/work-sans':
+        specifier: ^5.2.8
         version: 5.2.8
       '@tailwindcss/typography':
         specifier: ^0.5.10
@@ -56,6 +56,9 @@ importers:
       eslint-plugin-jsx-a11y:
         specifier: ^6.8.0
         version: 6.10.2(eslint@8.57.1)
+      fuse.js:
+        specifier: ^7.3.0
+        version: 7.3.0
       sharp:
         specifier: ^0.33.3
         version: 0.33.5
@@ -509,11 +512,11 @@ packages:
   '@fontsource/fira-code@5.2.7':
     resolution: {integrity: sha512-tnB9NNund9TwIym8/7DMJe573nlPEQb+fKUV5GL8TBYXjIhDvL0D7mgmNVNQUPhXp+R7RylQeiBdkA4EbOHPGQ==}
 
-  '@fontsource/inter@5.2.8':
-    resolution: {integrity: sha512-P6r5WnJoKiNVV+zvW2xM13gNdFhAEpQ9dQJHt3naLvfg+LkF2ldgSLiF4T41lf1SQCM9QmkqPTn4TH568IRagg==}
-
   '@fontsource/lora@5.2.8':
     resolution: {integrity: sha512-AQlfsHw4TP1x/eb2IZ6VjQ70ctKa39m9JN9A4zlvDOeKYLrCs+GaYIEQ86Y6YfSPGHn01bErXkRcyktOW0LOPQ==}
+
+  '@fontsource/work-sans@5.2.8':
+    resolution: {integrity: sha512-6LaHjVVgts+rnrcqvEkP2+iUB/jw1oDSYsGO0+TltAhnWki9Hnf/UGpgMQh2jcm0GEH8VqCPnq4PpmHLFzxXtQ==}
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -1817,6 +1820,10 @@ packages:
 
   functions-have-names@1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
+
+  fuse.js@7.3.0:
+    resolution: {integrity: sha512-plz8RVjfcDedTGfVngWH1jmJvBvAwi1v2jecfDerbEnMcmOYUEEwKFTHbNoCiYyzaK2Ws8lABkTCcRSqCY1q4w==}
+    engines: {node: '>=10'}
 
   generator-function@2.0.1:
     resolution: {integrity: sha512-SFdFmIJi+ybC0vjlHN0ZGVGHc3lgE0DxPAT0djjVg+kjOnSqclqmj0KQ7ykTOLP6YxoqOvuAODGdcHJn+43q3g==}
@@ -3828,9 +3835,9 @@ snapshots:
 
   '@fontsource/fira-code@5.2.7': {}
 
-  '@fontsource/inter@5.2.8': {}
-
   '@fontsource/lora@5.2.8': {}
+
+  '@fontsource/work-sans@5.2.8': {}
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
@@ -5317,6 +5324,8 @@ snapshots:
       is-callable: 1.2.7
 
   functions-have-names@1.2.3: {}
+
+  fuse.js@7.3.0: {}
 
   generator-function@2.0.1: {}
 

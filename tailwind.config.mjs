@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["Work Sans", ...defaultTheme.fontFamily.sans],
         serif: ["Lora", ...defaultTheme.fontFamily.serif],
         mono: ["Fira Code", ...defaultTheme.fontFamily.mono],
       },

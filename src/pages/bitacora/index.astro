@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
-import ArrowCard from "@components/ArrowCard.astro";
+import PostSearch from "@components/PostSearch.astro";
 import { BLOG } from "@consts";
 
 const data = (await getCollection("blog"))
@@ -29,13 +29,7 @@ const pastYears = allYears.slice(1);
         Bitácora {latestYear}
       </div>
       <div class="animate">
-        <ul class="flex flex-col gap-4">
-          {latestYearPosts.map(post => (
-            <li>
-              <ArrowCard entry={post} />
-            </li>
-          ))}
-        </ul>
+        <PostSearch posts={latestYearPosts} id={`bitacora-${latestYear}`} />
       </div>
       {pastYears.length > 0 && (
         <div class="animate space-y-3">

@@ -3,7 +3,7 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/FormattedDate.astro";
-import ArrowCard from "@components/ArrowCard.astro";
+import PostSearch from "@components/PostSearch.astro";
 import BackToPrev from "@components/BackToPrev.astro";
 import Tag from "@components/Tag.astro";
 import { readingTime } from "@lib/utils";
@@ -78,13 +78,7 @@ const postYear = props.type === "post" ? props.post.data.date.getFullYear() : nu
           {props.year}
         </div>
         <div class="animate">
-          <ul class="flex flex-col gap-4">
-            {props.posts.map(post => (
-              <li>
-                <ArrowCard entry={post} />
-              </li>
-            ))}
-          </ul>
+          <PostSearch posts={props.posts} id={`bitacora-${props.year}`} />
         </div>
       </div>
     </Container>
