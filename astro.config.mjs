@@ -12,7 +12,8 @@ const wollokGrammar = JSON.parse(
 );
 
 export default defineConfig({
-  site: "https://astro-nano-demo.vercel.app",
+  site: process.env.SITE ?? "https://pdep-lunes.github.io",
+  base: process.env.BASE ?? "/",
   integrations: [mdx(), sitemap(), tailwind()],
   markdown: {
     shikiConfig: {
