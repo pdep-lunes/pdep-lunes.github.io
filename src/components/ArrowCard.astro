@@ -13,8 +13,13 @@ const tags = entry.collection === "blog" ? (entry.data.tags ?? []) : [];
 
 <a href={`/${basePath}/${entry.slug}`} class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
   <div class="flex flex-col flex-1 truncate">
-    <div class="font-semibold">
-      {entry.data.title}
+    <div class="font-semibold flex items-baseline gap-1.5 min-w-0">
+      <span class="truncate">{entry.data.title}</span>
+      {entry.collection === "blog" && (
+        <span class="text-sm font-normal opacity-50 shrink-0">
+          · {entry.data.date.toLocaleDateString("es-AR", { day: "2-digit", month: "short", year: "numeric" })}
+        </span>
+      )}
     </div>
     <div class="text-sm">
       {entry.data.description}
