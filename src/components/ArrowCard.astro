@@ -3,12 +3,12 @@ import type { CollectionEntry } from "astro:content";
 import Tag from "@components/Tag.astro";
 
 type Props = {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
+  entry: CollectionEntry<"blog">;
 }
 
 const { entry } = Astro.props;
-const basePath = entry.collection === "blog" ? "bitacora" : entry.collection;
-const tags = entry.collection === "blog" ? (entry.data.tags ?? []) : [];
+const basePath = "bitacora";
+const tags = entry.data.tags ?? [];
 ---
 
 <a href={`/${basePath}/${entry.slug}`} class="relative group flex flex-nowrap py-3 px-4 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
