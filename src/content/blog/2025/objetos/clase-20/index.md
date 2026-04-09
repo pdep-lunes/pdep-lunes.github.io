@@ -41,6 +41,6 @@ En Wollok se hacen en un archivo a parte con extensión `.wtest`. Tenemos que te
 ## Links útiles 
 
 - [Video de la clase de años pasados](https://drive.google.com/file/d/1tRWJASR27eOnyDYbK9VY7FMK2rov9MHw/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2024/tree/main/Objetos/Clase03)  
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2024/objetos/clase-03)  
 - Apuntes de [Colecciones](https://docs.google.com/document/d/1MLbx1Fxt7I_uVg6Yv9hYfIu2IIbUQqqICbOM3s969D8/edit?tab=t.0).
 - Apuntes de [Testing](https://docs.google.com/document/d/1Q_v48gZfRmVfLMvC0PBpmtZyMoALbh11AwmEllP__eY/edit?tab=t.0).

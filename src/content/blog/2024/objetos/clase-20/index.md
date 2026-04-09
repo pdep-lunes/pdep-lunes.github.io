@@ -195,6 +195,6 @@ Se puede heredar tanto de clases abstractas como de clases concretas.
 ## Links útiles 
 
 - [Video de la clase](https://drive.google.com/file/d/1AQmfdgtekWMfe43T_vyqoSgqTVMf1GMy/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase05/animales_repaso.wlk) 
-- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase05/out/animales/animales.png) 
-- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase05/animales.plantuml) 
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/objetos/clase-05/animales_repaso.wlk) 
+- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/objetos/clase-05/out/animales/animales.png) 
+- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/objetos/clase-05/animales.plantuml) 

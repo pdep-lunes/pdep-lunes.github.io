@@ -95,8 +95,8 @@ Terminar la [tercera entrega del trabajo práctico de objetos](https://docs.goog
 ## Links útiles
 
 - [Video de la clase](https://drive.google.com/file/d/1y2PIsywYYZX6pcHcvfQ5vfn-3yLfYMtl/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2021/tree/master/objetos/clase_08/src)
-- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/objetos/clase_08/diagrama.png)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2021/objetos/clase_08/src)
+- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/objetos/clase_08/diagrama.png)
 - [Composición](https://wiki.uqbar.org/wiki/articles/composicion--oop-.html)
 
 

@@ -298,5 +298,5 @@ Te recomendamos leer la [guía rápida de Git](https://docs.google.com/document/
 - [Video de la clase](https://drive.google.com/file/d/10I86vEaVA-XDOzdaK6urWHKNr9-BEup7/view?usp=sharing)
 - [Pattern Matching](http://wiki.uqbar.org/wiki/articles/pattern-matching-en-haskell.html)
 - [Data](http://wiki.uqbar.org/wiki/articles/data--definiendo-nuestros-tipos-en-haskell.html)
-- [Código del TP](https://github.com/pdep-lunes/pdep-clases-2022/blob/master/Funcional/Clase05/src/Lib.hs). A tener en cuenta: invertimos el orden del autor y el título con respecto a la resolución de la bitácora.
+- [Código del TP](https://github.com/pdep-lunes/pdep-clases/blob/main/2022/funcional/clase-05/src/Lib.hs). A tener en cuenta: invertimos el orden del autor y el título con respecto a la resolución de la bitácora.
 

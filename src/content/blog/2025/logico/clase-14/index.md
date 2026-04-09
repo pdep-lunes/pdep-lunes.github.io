@@ -7,7 +7,7 @@ tags: [logico, is, listas, findall, ilogico]
 
 ## Tarea: 
 - Hacer el [TP grupal](https://docs.google.com/document/d/1ImcsLsk4HaWelo6m0esDB8RvMj0PiVvvXKRiX7p_ArQ/edit?tab=t.0#heading=h.ur5u8ali7kou) para el primer lunes pos vacaciones (04/08).
-- ¡Estudiar para el parcial! Pueden practicar con todos los que aparezcan en la [página de PdeP](https://www.pdep.com.ar/material/parciales), empezando por los que tengan resolución, para que puedan ir chequeando. De esa lista recomendamos que prioricen, luego de que hagan los que tienen resolución, [Steam Summer Sale](https://drive.google.com/file/d/1xJNQzdkVdGVQcd_y4uTUKWyf0pt-OJSH/view?usp=drive_link), [Pulp Fiction](https://docs.google.com/document/d/15mo_2391atBqMjcYzLtKvGG6JiPzjbeyEGVlwZjv4B8/edit#heading=h.qr1tbl1vrwzf) y [Rey Leon](https://drive.google.com/file/d/1x4X-0AfaKK3Zv-twZfsviXRlH6Xg2Oxt/view). También les dejamos [iLógico](https://docs.google.com/document/d/1VUNyZQXITv9CiSz9VjFwoQRVe8o03CtyvTS79UNl0O8/edit?usp=sharing) que contieneerrores comunes que se pueden dar en este paradigma. Pueden encontrar la solución [acá](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/logico/clase-15.pl)
+- ¡Estudiar para el parcial! Pueden practicar con todos los que aparezcan en la [página de PdeP](https://www.pdep.com.ar/material/parciales), empezando por los que tengan resolución, para que puedan ir chequeando. De esa lista recomendamos que prioricen, luego de que hagan los que tienen resolución, [Steam Summer Sale](https://drive.google.com/file/d/1xJNQzdkVdGVQcd_y4uTUKWyf0pt-OJSH/view?usp=drive_link), [Pulp Fiction](https://docs.google.com/document/d/15mo_2391atBqMjcYzLtKvGG6JiPzjbeyEGVlwZjv4B8/edit#heading=h.qr1tbl1vrwzf) y [Rey Leon](https://drive.google.com/file/d/1x4X-0AfaKK3Zv-twZfsviXRlH6Xg2Oxt/view). También les dejamos [iLógico](https://docs.google.com/document/d/1VUNyZQXITv9CiSz9VjFwoQRVe8o03CtyvTS79UNl0O8/edit?usp=sharing) que contieneerrores comunes que se pueden dar en este paradigma. Pueden encontrar la solución [acá](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/logico/clase-15.pl)
 
 
 
@@ -213,7 +213,7 @@ promedio(Lista, Promedio):-
 
 ## Links útiles:
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Logico/Clase03/clase03.pl) 
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/logico/clase-03/clase03.pl) 
 - [Aritmética/is](http://wiki.uqbar.org/wiki/articles/aritmetica-en-prolog.html)
 - [Listas y findall](http://wiki.uqbar.org/wiki/articles/paradigma-logico---listas.html)
 

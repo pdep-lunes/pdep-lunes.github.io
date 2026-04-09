@@ -23,5 +23,5 @@ Realizamos como práctica el parcial [PdePLibre](https://docs.google.com/documen
 
 ## Links útiles
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2024/tree/main/Objetos/Clase08/pdepLibre/src)
-- [Diagrama de clases](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase08/pdepLibre/diagrama.png)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2024/objetos/clase-08/pdepLibre/src)
+- [Diagrama de clases](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/objetos/clase-08/pdepLibre/diagrama.png)

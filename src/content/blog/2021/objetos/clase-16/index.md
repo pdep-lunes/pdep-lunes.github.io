@@ -15,5 +15,5 @@ Repasamos todos los conceptos del paradigma de objetos vistos hasta ahora con el
 
 ## Links útiles 
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2021/tree/master/objetos/batallaDeEstrellas)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2021/objetos/batallaDeEstrellas)
 - [Video de la clase](https://drive.google.com/file/d/1DkH33MbCiA-R-5BxUhaD7kkSzUQLIoTo/view?usp=sharing)

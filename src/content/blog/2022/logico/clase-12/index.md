@@ -214,7 +214,7 @@ promedioCopiasVendidas(Autor, Promedio):-
 
 ## Links útiles:
 
-- [Código de la clase del año pasado](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/logico/clase-14.pl)
+- [Código de la clase del año pasado](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/logico/clase-14.pl)
 - [Video de la clase del año pasado](https://drive.google.com/file/d/1wid_c8KD326sLNRwX0JBRc8ObzHO2oez/view?usp=sharing)
 - [Aritmética/is](http://wiki.uqbar.org/wiki/articles/aritmetica-en-prolog.html)
 - [Listas y findall](http://wiki.uqbar.org/wiki/articles/paradigma-logico---listas.html)

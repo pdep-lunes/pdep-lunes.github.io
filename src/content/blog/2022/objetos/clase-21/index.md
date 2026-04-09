@@ -95,8 +95,8 @@ Terminar la [segunda entrega del trabajo práctico de objetos](https://docs.goog
 ## Links útiles
 
 - [Video de la clase](https://drive.google.com/file/d/18qvrP2XBGfK10Cu0vl5QHff2Q8wpHJj7/view)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2022/tree/master/Objetos/Clase24)
-- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases-2022/blob/master/Objetos/Clase24/diagrama.png)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2022/objetos/clase-24)
+- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2022/objetos/clase-24/diagrama.png)
 - [Composición](https://wiki.uqbar.org/wiki/articles/composicion--oop-.html)
 
 

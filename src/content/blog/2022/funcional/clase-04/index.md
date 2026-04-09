@@ -158,6 +158,6 @@ Recordá no olvidarte el `otherwise` cuando utilices guardas ya que es donde ent
 
 - [Video de la clase](https://drive.google.com/file/d/103Xo3_a1lmnJXl8K3WlCZdgzo6ayQwi-/view?usp=sharing)
 - [Enunciado que hicimos en clase](https://docs.google.com/document/d/1YBTaPNfEd4s82UxmsRjYRZXCCA8-lQgFaLOEVbr0fGw/edit)
-- [Código del TP](https://github.com/pdep-lunes/pdep-clases-2022/blob/master/Funcional/Clase04/src/Lib.hs). A tener en cuenta: invertimos el orden del autor y el título con respecto a la resolución de la bitácora.
+- [Código del TP](https://github.com/pdep-lunes/pdep-clases/blob/main/2022/funcional/clase-04/src/Lib.hs). A tener en cuenta: invertimos el orden del autor y el título con respecto a la resolución de la bitácora.
 
 

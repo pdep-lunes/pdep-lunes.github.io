@@ -32,4 +32,4 @@ git config --global user.email "tu mail de github"
 - [Video de la clase 2021 de Git (a partir de la hora 1:55:38)](https://drive.google.com/file/d/10I86vEaVA-XDOzdaK6urWHKNr9-BEup7/view?usp=sharing)
 - [Video con la resolución del TP Monopoly](https://youtu.be/lXsX8wsR7AI). Si bien no es el que resolvimos en clase, tiene la misma esencia para practicar. 
 - [TP Monopoly](https://docs.google.com/document/d/1GMNli3FaVERM-OldRre467gT1LLhGXdXZoRoK7IvoKo/edit)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/src/Lib.hs)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/src/Lib.hs)

@@ -32,4 +32,4 @@ git config --global user.email "tu mail de github"
 
 - [Video de la clase 2021 de Git (a partir de la hora 1:55:38)](https://drive.google.com/file/d/10I86vEaVA-XDOzdaK6urWHKNr9-BEup7/view?usp=sharing)
 - [Video con la resolución de Monopoly](https://youtu.be/lXsX8wsR7AI)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase05/src/Lib.hs)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-05/src/Lib.hs)

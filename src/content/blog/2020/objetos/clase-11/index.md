@@ -115,7 +115,7 @@ object sally {
 
 ## Links útiles:
 
-- [Código de la clase](https://github.com/pdep-lunes/clase1-objetos-2020)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2020/objetos/clase-01)
 - [Video de la clase](https://drive.google.com/file/d/1n86oHvWveNmiK6j91OkqOLm7d8m2MMt5/view)
 
 

@@ -135,7 +135,7 @@ false //porque no son el mismo objeto
 
 ## Links útiles
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Objetos/Clase01/src/Clase01.wlk)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/objetos/clase-01/src/Clase01.wlk)
 - En la página de pdep y en la documentación de Wollok van a encontrar mucho material útil.
 
 

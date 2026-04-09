@@ -395,7 +395,7 @@ Y de esa forma completamos el TP usando las herramientas que aprendiste hasta ah
 ## Links Útiles
 
 - [Enunciado que hicimos en clase](https://docs.google.com/document/d/11uYGXvG-TnNhveawDjKD1iSWKW9Qy8PVqlvtHhV58F8/edit)
-- [Código del TP](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase03/src/Lib.hs)
+- [Código del TP](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-03/src/Lib.hs)
 - [Aplicación parcial](http://wiki.uqbar.org/wiki/articles/aplicacion-parcial.html)
 - [Orden superior](http://wiki.uqbar.org/wiki/articles/orden-superior.html)
 - [Pattern Matching](http://wiki.uqbar.org/wiki/articles/pattern-matching-en-haskell.html)

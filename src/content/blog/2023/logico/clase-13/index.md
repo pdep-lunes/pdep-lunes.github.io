@@ -198,7 +198,7 @@ promedioCopiasVendidas(Autor, Promedio):-
 
 ## Links útiles:
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Logico/Clase03/clase03.pl) 
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/logico/clase-03/clase03.pl) 
 - [Video de la clase de años anteriores](https://drive.google.com/file/d/1wid_c8KD326sLNRwX0JBRc8ObzHO2oez/view?usp=sharing)
 - [Aritmética/is](http://wiki.uqbar.org/wiki/articles/aritmetica-en-prolog.html)
 - [Listas y findall](http://wiki.uqbar.org/wiki/articles/paradigma-logico---listas.html)

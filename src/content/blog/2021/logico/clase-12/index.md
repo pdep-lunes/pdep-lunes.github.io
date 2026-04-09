@@ -10,10 +10,10 @@ tags: [logico, ilogico]
 
 ## ¿Qué vimos hoy?
 
-Hoy resolvimos el enunciado de [iLógico](https://docs.google.com/document/d/1VUNyZQXITv9CiSz9VjFwoQRVe8o03CtyvTS79UNl0O8/edit?usp=sharing) para ver los errores comunes que se pueden dar en este paradigma. Pueden encontrar la solución [acá](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/logico/clase-15.pl)
+Hoy resolvimos el enunciado de [iLógico](https://docs.google.com/document/d/1VUNyZQXITv9CiSz9VjFwoQRVe8o03CtyvTS79UNl0O8/edit?usp=sharing) para ver los errores comunes que se pueden dar en este paradigma. Pueden encontrar la solución [acá](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/logico/clase-15.pl)
 
 ## Links útiles:
 
 - [Enunciado de iLógico](https://docs.google.com/document/d/1VUNyZQXITv9CiSz9VjFwoQRVe8o03CtyvTS79UNl0O8/edit?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/logico/clase-15.pl)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/logico/clase-15.pl)
 - [Video de la clase](https://drive.google.com/file/d/1OXetxQbUO5EvomBJhh-pTLiwkokdkCwB/view?usp=sharing)

@@ -31,4 +31,4 @@ git config --global user.email "tu mail de github"
 
 - [TP Monopoly](https://docs.google.com/document/d/1GMNli3FaVERM-OldRre467gT1LLhGXdXZoRoK7IvoKo/edit) para practicar, no es obligatorio.
 - [Video con la resolución del TP Monopoly](https://youtu.be/lXsX8wsR7AI). Si bien no es el que resolvimos en clase, tiene la misma esencia para practicar. 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Funcional/Clase05/src/Lib.hs)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/funcional/clase-05/src/Lib.hs)

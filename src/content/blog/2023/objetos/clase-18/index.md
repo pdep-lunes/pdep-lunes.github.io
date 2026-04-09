@@ -194,6 +194,6 @@ En esta clase repasamos cómo representar clases abstractas, interfaces y las fl
 ## Links útiles 
 
 - [Video de la clase de años pasados](https://drive.google.com/file/d/1AQmfdgtekWMfe43T_vyqoSgqTVMf1GMy/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/tree/main/Objetos/Clase05/src) 
-- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Objetos/Clase05/diagrama/diagrama.png) 
-- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Objetos/Clase05/diagrama.plantuml) 
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2023/objetos/clase-05/src) 
+- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/objetos/clase-05/diagrama/diagrama.png) 
+- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/objetos/clase-05/diagrama.plantuml) 

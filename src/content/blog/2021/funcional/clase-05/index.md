@@ -242,7 +242,7 @@ foldr1 funcion (x:xs) = foldr funcion x xs
 ## Links Útiles
 
 - [Video de la clase](https://drive.google.com/file/d/1q53Ce_1YwcDnerffkJO8_KAraGc2iJGp/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/funcional/clase-5.hs)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/funcional/clase-5.hs)
 - [Guía rápida de Git](https://docs.google.com/document/d/147cqUY86wWVoJ86Ce0NoX1R78CwoCOGZtF7RugUvzFg/edit#heading=h.pfzudah6sze2)
 - [Resolución de conflictos en Git y VSCode](https://www.youtube.com/watch?v=Z1PBoZoQ_pQ)
 

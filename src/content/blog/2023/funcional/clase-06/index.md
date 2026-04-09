@@ -264,7 +264,7 @@ foldr1 funcion (x:xs) = foldr funcion x xs
 ## Links Útiles
 
 - [Video de la clase del 2022](https://drive.google.com/file/d/1_OOHBV8A7ixwUYX4wRihRiYDmQ2GIBvw/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase06/src/Lib.hs)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-06/src/Lib.hs)
 - [Expresiones Lambda](http://wiki.uqbar.org/wiki/articles/expresiones-lambda.html)
 - [Currificación](http://wiki.uqbar.org/wiki/articles/currificacion.html)
 - [Recursividad en haskell](http://wiki.uqbar.org/wiki/articles/recursividad-en-haskell.html)

@@ -125,7 +125,7 @@ Y lo que estamos haciendo es simplemente darle un nuevo nombre a esa función, p
 
 Los parámetros implícitos también son útiles y frecuentemente vistos en los casos en los que componemos funciones.
 
-Volviendo al _[TP "Hora de lectura"](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase04/src/Lib.hs)_, teníamos esta función:
+Volviendo al _[TP "Hora de lectura"](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-04/src/Lib.hs)_, teníamos esta función:
 
 ```haskell
 nombreDeLaBiblioteca :: Biblioteca -> String

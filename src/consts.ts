@@ -40,9 +40,9 @@ export const SOCIALS: Socials = [
   {
     NAME: "discord",
     HREF: "https://discord.com",
+  },
+  { 
+    NAME: "pdep.com.ar",
+    HREF: "https://www.pdep.com.ar",
   }
-  // { 
-  //   NAME: "linkedin",
-  //   HREF: "https://www.linkedin.com/in/markhorn-dev",
-  // }
 ];

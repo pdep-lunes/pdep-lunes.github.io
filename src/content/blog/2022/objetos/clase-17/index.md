@@ -11,5 +11,5 @@ Repasamos todos los conceptos del paradigma de objetos vistos hasta ahora con el
 
 ## Links útiles 
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2022/tree/master/Objetos/Clase20/src)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2022/objetos/clase-20/src)
 - [Video de la clase](https://drive.google.com/file/d/1p-8mP8VzV5YPFJ-AjtNRQAHY1tP5Li8s/view?usp=sharing)

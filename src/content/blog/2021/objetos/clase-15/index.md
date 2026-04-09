@@ -39,7 +39,7 @@ En Wollok se hacen en un archivo a parte con extensión `.wtest`. Tenemos que te
 
 ## Links útiles 
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2021/tree/master/objetos/superHeroes/superHeroes)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2021/objetos/superHeroes/superHeroes)
 - [Colecciones](https://docs.google.com/document/d/1MLbx1Fxt7I_uVg6Yv9hYfIu2IIbUQqqICbOM3s969D8/edit)
 - [Testing](https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#heading=h.54t50i579i9f)
 - [Video de la clase](https://drive.google.com/file/d/1gYQdIfTUwrUkJAJar2Q5hyfyBB7kjVXB/view?usp=sharing)

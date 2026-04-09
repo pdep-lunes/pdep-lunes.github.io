@@ -176,8 +176,8 @@ En esta clase repasamos cómo representar clases abstractas, interfaces y las fl
 
 - [Video de la clase](https://drive.google.com/file/d/1MEW4sEMUtIYIB4kW9hPP3EKwf5J7VKI0/view?usp=sharing)
 - [Enunciado trabajado en clase](https://docs.google.com/document/d/1BMk9ykHLhzh0ceQODKUdn3OiaLVs9-h3yILvmcuJdp8/)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2021/tree/master/objetos/clase_06/src)
-- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/objetos/clase_06/diagrama.png)
-- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/objetos/clase_06/diagrama.uml)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2021/objetos/clase_06/src)
+- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/objetos/clase_06/diagrama.png)
+- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/objetos/clase_06/diagrama.uml)
 - [Herencia, super, redefinición y method lookup en Wollok](https://docs.google.com/document/d/1KdG7NrKPgPh4bAcyLuDG2G1iWP7Ze2GFs91qzlvDKqI/edit#heading=h.mpvsrdz55x8g)
 - [Duck Typing](https://en.wikipedia.org/wiki/Duck_typing)

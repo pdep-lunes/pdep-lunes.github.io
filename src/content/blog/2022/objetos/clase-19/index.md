@@ -175,8 +175,8 @@ En esta clase repasamos cómo representar clases abstractas, interfaces y las fl
 ## Links útiles 
 
 - [Video de la clase](https://drive.google.com/file/d/1AQmfdgtekWMfe43T_vyqoSgqTVMf1GMy/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2022/tree/master/Objetos/Clase22)
-- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases-2022/blob/master/Objetos/Clase22/diagramas.png)
-- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases-2022/blob/master/Objetos/Clase22/diagramas.wsd)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2022/objetos/clase-22)
+- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2022/objetos/clase-22/diagramas.png)
+- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases/blob/main/2022/objetos/clase-22/diagramas.wsd)
 - [Herencia, super, redefinición y method lookup en Wollok](https://docs.google.com/document/d/1KdG7NrKPgPh4bAcyLuDG2G1iWP7Ze2GFs91qzlvDKqI/edit#heading=h.mpvsrdz55x8g)
 - [Duck Typing](https://en.wikipedia.org/wiki/Duck_typing)

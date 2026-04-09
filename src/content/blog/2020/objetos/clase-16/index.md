@@ -175,7 +175,7 @@ En esta clase en particular vimos cómo representar clases concretas, clases abs
 ## Links útiles 
 
 - [Video de la clase](https://drive.google.com/file/d/1DHstVgBAM4rVCH2kNAC9zwWXoCJdkazb/view)
-- [Código de la clase](https://github.com/pdep-lunes/clase16-objetos-2020)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2020/objetos/clase-16)
 - [Diagrama de clases de la clase](http://www.plantuml.com/plantuml/png/ZL5DJy9043splwBXr1fxq1z0842CYGI3mVlGZhXakukpirpG_-uiz4DBWbxQ-PWtR-UziMSW3fLHaurdWeAJPoJlBEmmEIgqI5iDIji3MfdKJcr9ivlXgoxOaRG6_KgQDJ29M4iyRrCJYdUWgRD2bU97q7kNgJrIYTGC5M1Pbr1cgebcE3TO2R_piY8OrfLhAbAGBGoqxfKJLO5rauLyQZh7v9uYV-aeKrzAJGrutvsxV4FhzS4bnmkekGARuGkOK7PYJLPO1Ba9w3zxfgxQ0AF0ptBSrVzxLPmwcjAea44GXPWm3NP-6hXDua7dEAj13s3Z-iw1Sxl5P68auvP0ldu1VeLUUyQODMuCBfucoX8S_tv3KXkvjeyjISSSroutEomuOKSYydL_BcqMV0Jc-UUerLxrpUkr-oRzxlwyBtRglAdd-MXuC-p6nsZBK9bl)
 - [Instructivo Plant UML](https://github.com/pdep-noche-mavi/tutorial-plantuml)
 - [Herencia, super, redinifición y method lookup en Wollok](https://docs.google.com/document/d/1KdG7NrKPgPh4bAcyLuDG2G1iWP7Ze2GFs91qzlvDKqI/edit#heading=h.mpvsrdz55x8g)

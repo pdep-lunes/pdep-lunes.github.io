@@ -34,6 +34,6 @@ Como herramienta para construirlo utilizamos [Plant UML](https://plantuml.com/es
 ## Links útiles 
 
 - [Video de la clase de años pasados](https://drive.google.com/file/d/1UnR9hm10OtCwpUH6jRlaqVHKyi2xArkQ/view?usp=sharing) 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2024/tree/main/Objetos/Clase04)
-- [Diagrama de clases](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase04/diagramaClase04.png) 
-- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase04/diagrama.plantuml)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2024/objetos/clase-04)
+- [Diagrama de clases](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/objetos/clase-04/diagramaClase04.png) 
+- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/objetos/clase-04/diagrama.plantuml)

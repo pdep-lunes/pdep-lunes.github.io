@@ -108,6 +108,6 @@ El diagrama de clases es la herramienta que tenemos para comunicar las relacione
 ## Links útiles
 
 - [Video de la clase de años anteriores](https://drive.google.com/file/d/18qvrP2XBGfK10Cu0vl5QHff2Q8wpHJj7/view)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2024/tree/main/Objetos/Clase07/src)
-- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase07/diagrama.plantuml)
-- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase07/diagrama.png) 
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2024/objetos/clase-07/src)
+- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/objetos/clase-07/diagrama.plantuml)
+- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases/blob/main/2024/objetos/clase-07/diagrama.png) 

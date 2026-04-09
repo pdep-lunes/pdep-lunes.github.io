@@ -211,7 +211,7 @@ Podemos los tipos que pertenecen a cada familia en el siguiente diagrama:
 
 - [Tipos en Haskell](http://wiki.uqbar.org/wiki/articles/tipos-de-haskell.html) 
 - [Inferencia de tipos](http://wiki.uqbar.org/wiki/articles/inferencia-de-tipos.html)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase02/src/Lib.hs)
-- [Repositorio de clases](https://github.com/pdep-lunes/pdep-clases-2023) 
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-02/src/Lib.hs)
+- [Repositorio de clases](https://github.com/pdep-lunes/pdep-clases/tree/main/2023) 
 
 

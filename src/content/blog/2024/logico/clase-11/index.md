@@ -21,7 +21,7 @@ tags: [logico, hechos, reglas, universo-cerrado, negacion, unificacion-asignacio
 - Inversibilidad
 
 Repasamos lo visto en el [video](https://www.youtube.com/watch?reload=9&v=4M-lzIOhVbI&feature=youtu.be) que introducía los conceptos básicos del *paradigma lógico*.
-Luego hicimos ejercicios que encontrás [acá](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/logico/clase-12.pl).
+Luego hicimos ejercicios que encontrás [acá](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/logico/clase-12.pl).
 
 ## Links útiles
 

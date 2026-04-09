@@ -145,7 +145,7 @@ A pesar de que `sally` y `poroto` tengan los mismos atributos, con los mismos va
 
 ## Links útiles:
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2022/tree/master/Objetos/Clase17)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2022/objetos/clase-17)
 - [Video de la clase](https://drive.google.com/file/d/1DDL_luquKvKibm6_ziDO3nnWDU7dMeSp/view?usp=sharing)
 
 

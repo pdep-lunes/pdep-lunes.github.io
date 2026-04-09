@@ -159,7 +159,7 @@ Pero fijate que solo lo utilizamos en las novelas y en los libros de cuentos. Pa
 ## Links útiles:
 
 - [Video de la clase de hoy](https://drive.google.com/file/d/1UQ7nDRmIqJhgj3xDexiLfoWZqwqnVuT-/view?usp=sharing)
-- [Código de la clase de hoy](https://github.com/pdep-lunes/pdep-clases-2021/blob/master/logico/clase-13.pl)
+- [Código de la clase de hoy](https://github.com/pdep-lunes/pdep-clases/blob/main/2021/logico/clase-13.pl)
 - [Generación](http://wiki.uqbar.org/wiki/articles/paradigma-logico---generacion.html)
 - [Forall](http://wiki.uqbar.org/wiki/articles/paradigma-logico---existe-vs-para-todo.html)
 - [Functores](http://wiki.uqbar.org/wiki/articles/paradigma-logico---functores.html)

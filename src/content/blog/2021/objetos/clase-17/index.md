@@ -36,7 +36,7 @@ Hasta ahora siempre estuvimos trabajando con un diagrama dinámico, conocido com
 ## Links útiles 
 
 - [Video de la clase](https://drive.google.com/file/d/190rRiC16bo0G_FCyyRLYqD_1gU8VqQbP/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2021/tree/master/objetos/clase_05/src)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2021/objetos/clase_05/src)
 - [Clases + method look up](https://docs.google.com/document/d/1Dgq_PfCbJHO1M7dXe-vGXtj4mbEUWlYhfvQ2i0RWOsk/edit)
 - [Instanciación](https://docs.google.com/document/d/11c9l3sqgUIFDx1J_ULCSS86faMQXAyOV3uesg-nwaSY/edit)
 

@@ -158,6 +158,6 @@ sacarSecuela unLibro = unLibro { titulo = titulo libro ++ " 2", paginas = pagina
 - [Video de la clase 2021 de Data](https://drive.google.com/file/d/10I86vEaVA-XDOzdaK6urWHKNr9-BEup7/view?usp=sharing)
 - [Data](http://wiki.uqbar.org/wiki/articles/data--definiendo-nuestros-tipos-en-haskell.html)
 - [Nuevo enunciado “Hora de Lectura”](https://docs.google.com/document/d/1YNnnn1bVDi1E0ErvyaPBpqcyYmxBWdgOenKztIvzk9E/edit#heading=h.poq6zqz17xui) 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase04/src/Lib.hs)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-04/src/Lib.hs)
 
 

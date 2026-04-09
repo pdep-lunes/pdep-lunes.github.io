@@ -235,10 +235,10 @@ foldr1 funcion (x:xs) = foldr funcion x xs
 ## Links Útiles
 
 - [Video de la clase](https://drive.google.com/file/d/1_OOHBV8A7ixwUYX4wRihRiYDmQ2GIBvw/view?usp=sharing)
-- [Código de la primera parte de la clase](https://github.com/pdep-lunes/pdep-clases-2022/blob/master/Funcional/Clase06/src/1-parte.hs)
+- [Código de la primera parte de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2022/funcional/clase-06/src/1-parte.hs)
 - [Expresiones Lambda](http://wiki.uqbar.org/wiki/articles/expresiones-lambda.html)
 - [Currificación](http://wiki.uqbar.org/wiki/articles/currificacion.html)
-- [Código de la segunda parte de la clase](https://github.com/pdep-lunes/pdep-clases-2022/blob/master/Funcional/Clase06/src/2-parte.hs)
+- [Código de la segunda parte de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2022/funcional/clase-06/src/2-parte.hs)
 - [Recursividad en haskell](http://wiki.uqbar.org/wiki/articles/recursividad-en-haskell.html)
 - [La familia fold](https://docs.google.com/document/d/1jSrU7lVMan4nbHBETGqvO5VpqJI0KXVWtH7fqnVASPU/edit?usp=sharing)
 - Formas de ver fold interactivas https://stevekrouse.com/hs.js/ y https://pdep-lunes-fold.netlify.app/

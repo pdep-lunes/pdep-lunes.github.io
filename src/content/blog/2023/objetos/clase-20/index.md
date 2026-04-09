@@ -35,8 +35,8 @@ Recomendamos ir haciendo de la [página de pdep](https://www.pdep.com.ar/materia
 
 ## Links útiles
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/tree/main/Objetos/Clase07)
-- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Objetos/Clase07/diagrama/diagrama.png)
-- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Objetos/Clase07/diagrama.plantuml) 
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2023/objetos/clase-07)
+- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/objetos/clase-07/diagrama/diagrama.png)
+- [Código del diagrama de clases](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/objetos/clase-07/diagrama.plantuml) 
 
 

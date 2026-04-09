@@ -22,4 +22,4 @@ Realizamos como práctica el parcial de años pasados [PdePLibre](https://docs.g
 
 ## Links útiles
 
-- [Posible solución de PdePLibre](https://github.com/pdep-lunes/pdep-clases-2024/tree/main/Objetos/Clase08/pdepLibre/src)
+- [Posible solución de PdePLibre](https://github.com/pdep-lunes/pdep-clases/tree/main/2024/objetos/clase-08/pdepLibre/src)

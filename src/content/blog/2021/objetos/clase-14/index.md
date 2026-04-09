@@ -148,6 +148,6 @@ object rutatlantica {
 
 ## Links útiles:
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2021/tree/master/objetos/pdepcargas)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2021/objetos/pdepcargas)
 - [Video de la clase](https://drive.google.com/file/d/1k4n41gaIBCwyo0T_ZMgryWg5EV2OdZGE/view?usp=sharing)
 - [Pdep cargas](https://docs.google.com/document/d/1knTRBIF3WLOtRO6JpPGR9ooWsa-0ckBm7OlFeG92LhM/edit?usp=sharing)

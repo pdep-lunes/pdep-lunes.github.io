@@ -19,6 +19,6 @@ tags: [funcional, práctica]
 
 ## Links Útiles
 
-- [Resolución Haskell Chef](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase09/src/Lib.hs)
-- [Código de Disfuncional](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase09/src/Disfuncional.hs)
-- [Código del modelado de Gravity Fall](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase09/src/GravityFalls.hs) 
+- [Resolución Haskell Chef](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-09/src/Lib.hs)
+- [Código de Disfuncional](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-09/src/Disfuncional.hs)
+- [Código del modelado de Gravity Fall](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-09/src/GravityFalls.hs) 

@@ -89,7 +89,7 @@ Algo a notar, es que la excepción a atrapar tiene que ser **la que quiero atrap
 ## Links útiles
 
 - [Video de la clase de años anteriores](https://drive.google.com/file/d/1iMFOHQUxjrLJFvE2nPlsxFX8Cyfz7D0N/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/tree/main/Objetos/Clase06/src)
-- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Objetos/Clase06/diagrama/diagrama.png)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2023/objetos/clase-06/src)
+- [Diagrama de clases de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/objetos/clase-06/diagrama/diagrama.png)
 - [Enunciado de la clase](https://docs.google.com/document/d/1nUlXmrR-JS9pM2vG7Q5ggIJzF-AsHopRjZutd2BhLOI/edit)
 

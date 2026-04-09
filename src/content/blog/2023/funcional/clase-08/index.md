@@ -56,7 +56,7 @@ El crear estas funciones auxiliares nos trae un montón de ventajas:
 
 ## Links Útiles
 
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Funcional/Clase08/src/Lib.hs)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-08/src/Lib.hs)
 
 
 

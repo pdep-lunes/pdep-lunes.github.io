@@ -8,7 +8,7 @@ tags: [funcional, currificacion, recursividad, fold]
 ## Tarea para la clase que viene
 
 - Hacer los nuevos puntos del [Monopoly Recargado](https://docs.google.com/document/d/1--4XJTZqk49fEXxwGJjoQwoc_MfNAymheY-BJ2IRS40)
-- Ver la [solución propuesta](https://github.com/pdep-lunes/monopoly) a la primera parte del tp y hacer consultas (hay un [video](https://www.youtube.com/watch?v=lXsX8wsR7AI) con el paso a paso).
+- Ver la [solución propuesta](https://github.com/pdep-lunes/pdep-tps/tree/main/funcional/monopoly) a la primera parte del tp y hacer consultas (hay un [video](https://www.youtube.com/watch?v=lXsX8wsR7AI) con el paso a paso).
 
 ---
 

@@ -131,7 +131,7 @@ Al hecho de tratar variables indistintamente de su forma lo llamamos **polimorfi
 ## Links útiles:
 
 - [Video de la clase de 2022](https://drive.google.com/file/d/19BgJqAjgu4n4cMCt7tMj1Ytiv3evN1Nk/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Logico/Clase02/clase02.pl) 
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/logico/clase-02/clase02.pl) 
 - [Generación](http://wiki.uqbar.org/wiki/articles/paradigma-logico---generacion.html)
 - [Forall](http://wiki.uqbar.org/wiki/articles/paradigma-logico---existe-vs-para-todo.html)
 - [Functores](http://wiki.uqbar.org/wiki/articles/paradigma-logico---functores.html)

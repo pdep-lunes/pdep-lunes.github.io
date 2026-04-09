@@ -97,6 +97,6 @@ Realizamos como práctica el parcial [PdePLibre](https://docs.google.com/documen
 ## Links útiles
 
 - [Video de la clase de años anteriores](https://drive.google.com/file/d/18qvrP2XBGfK10Cu0vl5QHff2Q8wpHJj7/view)
-- [Código de la clase](https://github.com/pdep-lunes/pdep-clases-2023/tree/main/Objetos/Clase08)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2023/objetos/clase-08)
 
 

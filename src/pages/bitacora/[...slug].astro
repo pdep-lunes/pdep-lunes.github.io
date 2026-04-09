@@ -14,15 +14,20 @@ export async function getStaticPaths() {
     .filter(post => !post.data.draft)
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-  const postRoutes = posts.map((post, index) => ({
-    params: { slug: post.slug },
-    props: {
-      type: "post" as const,
-      post,
-      prev: posts[index + 1] ?? null,
-      next: posts[index - 1] ?? null,
-    },
-  }));
+  const postRoutes = posts.map((post) => {
+    const year = post.data.date.getFullYear().toString();
+    const sameyear = posts.filter(p => p.data.date.getFullYear().toString() === year);
+    const i = sameyear.findIndex(p => p.slug === post.slug);
+    return {
+      params: { slug: post.slug },
+      props: {
+        type: "post" as const,
+        post,
+        prev: sameyear[i + 1] ?? null,
+        next: sameyear[i - 1] ?? null,
+      },
+    };
+  });
 
   const years = [...new Set(posts.map(p => p.data.date.getFullYear().toString()))];
   const yearRoutes = years.map(year => ({

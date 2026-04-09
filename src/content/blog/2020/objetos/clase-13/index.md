@@ -40,7 +40,7 @@ En Wollok se hacen en un archivo a parte con extensión `.wtest`. Tenemos que te
 ## Links útiles 
 
 - [Video de la clase](https://drive.google.com/file/d/1DmWOFVi-vSS1uHPEqFVZgNGuxhJLnKnj/view?usp=sharing)
-- [Código de la clase](https://github.com/pdep-lunes/clase3-objetos-2020)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/tree/main/2020/objetos/clase-03)
 - [Colecciones](https://docs.google.com/document/d/1MLbx1Fxt7I_uVg6Yv9hYfIu2IIbUQqqICbOM3s969D8/edit)
 - [Testing (Explicación de `describe` y `fixture` incluída)](https://docs.google.com/document/d/1caDE_mlP1QMfzyVpyvh-tKshjAeYLXBkXDYrTX5zFUI/edit#heading=h.54t50i579i9f)
 

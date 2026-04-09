@@ -181,7 +181,7 @@ promedioCopiasVendidas(Autor, Promedio):-
 
 ## Links útiles:
 
-- [Código de la clase](https://github.com/pdep-lunes/obras/blob/master/obras.pl)
+- [Código de la clase](https://github.com/pdep-lunes/pdep-clases/blob/main/2020/logico/obras.pl)
 - [Video de la clase](https://drive.google.com/file/d/12-Zgt-FIicdu_3-lt13JuHoA7Q0zlW1f/view)
 - [Listas y findall](http://wiki.uqbar.org/wiki/articles/paradigma-logico---listas.html)
 
