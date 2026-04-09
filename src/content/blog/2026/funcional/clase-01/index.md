@@ -1,3 +1,10 @@
+---
+title: Presentación y primeros conceptos
+date: "2025-04-06"
+description: "Primera clase de PdeP"
+tags: [expresividad, declaratividad, paradigmas]
+---
+
 ## Qué hacer para la clase que viene:
 - Unirse a [discord](https://discord.gg/MErR5F7g) siguiendo este [instructivo](https://docs.google.com/document/d/1KhlCwxp0c6gOC2plRDMJvgiBwU7-z7uBRcO-fa4HIyY/edit).
 - Armar grupo de 4 personas. Podés buscar integrantes en el canal `#buscando-grupo` de Discord. Una vez que ya lo tengas armado, anunciarlo en el canal `#grupos` indicando quiénes lo integran (etiquetando a las personas).
