@@ -45,7 +45,7 @@ Estos dos conceptos son complementarios y vamos a buscar que nuestras soluciones
 
 ¡Veamos unos ejemplos!
 
-```
+```c
 -- Solución A
 ​
 int d(int c[]) {
