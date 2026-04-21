@@ -8,7 +8,7 @@ tags: [funcional, aplicacion-parcial, orden-superior, pattern-matching, tuplas, 
 ## Tarea para la clase que viene:
 - Resolver el [TP "Hora de lectura"](https://docs.google.com/document/d/1h0JQAyYL5ePak_9HS5ROgNv4afz6OE5hLXeajFG5l7o/edit). **Importante**: si bien en esta bitácora está la resolución paso a paso y el código de la misma, sugerimos que intenten resolver por su cuenta el ejercicio antes de ver la solución (¡y preguntarnos lo que no se entienda!).
 - Armar grupo si todavía no lo hiciste. Podés buscar integrantes en el canal **#buscando-grupo** de Discord. Una vez que ya lo tengas armado, anunciarlo en el canal **#grupos** indicando quiénes lo integran.
-- Instalarse [Haskell]https://www.pdep.com.ar/material/software/haskell#h.s3sbdq9pp5x0) **CON PdePreludat** y [Visual Studio Code](https://code.visualstudio.com/download).
+- Instalarse [Haskell](https://www.pdep.com.ar/material/software/haskell#h.s3sbdq9pp5x0) **CON PdePreludat** y [Visual Studio Code](https://code.visualstudio.com/download).
 - Resolver el ejercicio [PdeP - commerce](https://docs.google.com/document/d/1kjXQ24yGqdvrXWqGT-7T2hCd8o10uz738N5NDROhfI0/edit#) para ir practicando. 
 - Instalarse [Miyuki](https://github.com/miyukiproject/miyuki/wiki/Instalaci%C3%B3n) (plataforma offline que tiene un recorrido de ejercicios que se autoevalúan)
 
