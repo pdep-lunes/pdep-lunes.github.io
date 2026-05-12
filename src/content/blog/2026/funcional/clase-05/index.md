@@ -441,6 +441,50 @@ map''' :: (a -> b) -> [a] -> [b]
 map''' transformacion lista = foldr' ((:) . transformacion) [] lista
 ```
 
+### Continuación de PdePerritos
+
+Agregamos dos puntos más a la [prácitca](https://docs.google.com/document/d/1KUzFMtXNC3BqVq49G2YYJmZ6EMp3HdQ4yfRmkmkIfmI/edit?tab=t.0) de PdePerritos, que hicimos la clase anterior. En la Parte B ahora queremos:
+- Que un perro realice una rutina de la guardería, revisando antes que el tiempo de la rutina no puede ser mayor al tiempo de permanencia.
+- Dados unos perros, reportar todos los que quedan cansados después de realizar la rutina de una guardería.
+
+Les dejamos una base de código para que puedan empezar a resolver estos puntos para la clase que viene.
+
+```haskell
+data Perrito = UnPerrito {
+  raza :: String,
+  jueguetesFavoritos :: [String],
+  tiempoDePermanencia :: Int,
+  energia :: Int
+} deriving (Show, Eq)
+
+type Ejercicio = Perrito -> Perrito
+type Actividad = (Ejercicio, Int) -- podría haberse hecho con data también
+
+data Guarderia = UnaGuarderia {
+  nombre :: String,
+  rutina :: [Actividad]
+} deriving (Show, Eq)
+
+-- teníamos los siguientes ejercicios:
+jugar :: Ejercicio
+ladrar :: Int -> Ejercicio
+regalar :: String -> Ejercicio
+diaDeSpa :: Ejercicio
+diaDeCampo :: Ejercicio
+
+guarderiaPdePerritos :: Guarderia
+guarderiaPdePerritos = UnaGuarderia {
+  nombre = "PdePerritos",
+  rutina = [
+    (jugar, 30),
+    (ladrar 18, 20),
+    (regalar "pelota", 0),
+    (diaDeSpa, 120),
+    (diaDeCampo, 720)
+  ]
+}
+```
+
 ## Links Útiles
 
 - [Expresiones Lambda](http://wiki.uqbar.org/wiki/articles/expresiones-lambda.html)
