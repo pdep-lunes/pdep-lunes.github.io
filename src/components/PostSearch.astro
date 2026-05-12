@@ -18,7 +18,7 @@ const fuseData = posts.map(post => ({
 ---
 
 <div class="space-y-4" data-search-root={id}>
-  <script type="application/json" data-search-data={id} set:html={JSON.stringify(fuseData)} />
+  <script type="application/json" is:inline data-search-data={id} set:html={JSON.stringify(fuseData)} />
   <input
     id={`search-${id}`}
     type="text"

@@ -7,7 +7,7 @@ tags: [funcional, práctica, fold, recursividad, currificación, lambda]
 
 ## Tarea para la clase que viene:
 
-- Terminar la [Entrega 1](https://docs.google.com/document/d/1yYb_lHIGgk-anCsJCIsM2rpXjxXp8t8pczgkO1AavGU/edit?tab=t.0) del TP grupal de Funcional. La correción sera presencial en el horario de clase, nos vamos a estar juntando por grupos y viendo lo que hicieron mientras hacemos algunas preguntas.
+- Terminar la [Entrega 1](https://docs.google.com/document/d/1yYb_lHIGgk-anCsJCIsM2rpXjxXp8t8pczgkO1AavGU/edit?tab=t.0) del TP grupal de Funcional. La corrección será presencial en el horario de clase, nos vamos a estar juntando por grupos y viendo lo que hicieron mientras hacemos algunas preguntas.
 
 ## Expresiones lambda
 
@@ -61,7 +61,7 @@ preciosFinales precios descuentos =
   zipWith (\precio descuento -> precio * (1 - descuento)) precios descuentos
 ```
 
-En este caso acabamos de usar una función lambda que recibe más de un parámetro, y eso es totalmente válido. En ese caso la sintáxis es `\param1 param2 -> cuerpo`, y el cuerpo puede usar ambos parámetros.
+En este caso acabamos de usar una función lambda que recibe más de un parámetro, y eso es totalmente válido. En ese caso la sintaxis es `\param1 param2 -> cuerpo`, y el cuerpo puede usar ambos parámetros.
 
 Como dijimos antes, esta es una nueva forma de definir funciones y podríamos haberla usado para definir todas las funciones que venimos usando, por ejemplo:
 
@@ -73,18 +73,18 @@ sumar :: (Num a) => a -> a -> a
 sumar = \x y -> x + y
 ```
 
-Además de llamarlas funciones lambas se las suele llamar funciones anónimas, porque no les estamos dando un nombre.
+Además de llamarlas funciones lambdas se las suele llamar funciones anónimas, porque no les estamos dando un nombre.
 
 ## Currificación
 
-Pensando en como funciona la aplicación parcial, la función sumar se puede escribir también como:
+Pensando en cómo funciona la aplicación parcial, la función sumar se puede escribir también como:
 
 ```haskell
 sumar' :: (Num a) => a -> (a -> a)
 sumar' = \x -> \y -> x + y
 ```
 
-Aunque pueda parecer raro o magia, sumar y sumar' son exactamente la misma función. Para poder entender la magia de esto vamos a pensar en como usamos las funciones en otros lenguajes como C o Javascript por ejemplo.
+Aunque pueda parecer raro, sumar y sumar' son exactamente la misma función. Para poder entender la magia de esto vamos a pensar en cómo usamos las funciones en otros lenguajes como C o Javascript por ejemplo.
 
 Si tratamos de definir la función multiplicar en Haskell de una forma más parecida a como hacemos en otros lenguajes, podríamos escribir algo como esto:
 
@@ -99,7 +99,7 @@ resultado = multiplicar (3, 4)
 
 ¿Pero qué es `(3, 4)` en Haskell? Es un par de números, una tupla.
 
-¿Y por qué funciona? Bueno, porque justamente dijimos que multiplicar recibe una tupla. Ahora qué pasaría si hicieramos esto?
+¿Y por qué funciona? Bueno, porque justamente dijimos que multiplicar recibe una tupla. Ahora qué pasaría si hiciéramos esto?
 
 ```haskell
 resultado = multiplicar 3 4
@@ -140,7 +140,7 @@ Esta magia que hace haskell para que ambas formas de definir la función sean eq
 
 Es por esto que decimos que todas las funciones en Haskell reciben un solo parámetro, aunque a veces parezca que reciben más. En realidad, lo que pasa es que cuando escribimos una función con varios parámetros, Haskell la currifica automáticamente.
 
-Y acá viene algo un poco loco... Si todas las funciones reciben un solo parámetro y dijimos que la composición de funciones servía para componer funciones de un solo parámetro, entonces... ¿podemos componer cualquier función en Haskell? La respuesta es sí. Hacerlo suele ser un poco rebuscado pero siempre que los tipos matcheen entonces será posible. Podemos ver este ejemplo donde usamos composición con `min :: (Ord a) => a -> a -> a` que es una función de dos parámetros, pero como es curificada entonces podemos usarla con composición.
+Y acá viene algo un poco loco... Si todas las funciones reciben un solo parámetro y dijimos que la composición de funciones servía para componer funciones de un solo parámetro, entonces... ¿podemos componer cualquier función en Haskell? La respuesta es sí. Hacerlo suele ser un poco rebuscado pero siempre que los tipos matcheen entonces será posible. Podemos ver este ejemplo donde usamos composición con `min :: (Ord a) => a -> a -> a` que es una función de dos parámetros, pero como es currificada entonces podemos usarla con composición.
 
 ```haskell
 dobleConTecho :: Num a => a -> a -> a
@@ -150,11 +150,12 @@ dobleConTecho' :: (Num a) => a -> a -> a
 dobleConTecho' numero techo = (min . (* 2)) numero techo
 
 dobleConTecho'' :: (Num a) => a -> a -> a
-dobleConTecho'' = min . (* 2)
+dobleConTecho'' = min . (* 2) -- usando point free
 
 -- El tipo de las dos funciones que componemos es el siguiente:
-min :: Int -> Int -> Int -- este es el tipo original
-min :: Int -> (Int -> Int) -- pero lo puedo pensar así porque es curificada
+min :: (Ord a) => a -> a -> a -- este es el tipo original
+min :: Int -> Int -> Int      -- así queda pensado con Ints
+min :: Int -> (Int -> Int)    -- pero lo puedo pensar así porque es currificada
 (* 2) :: Int -> Int -- viene del tipo de (*) pero parcialmente aplicada a 2
 
 -- El tipo de la composición era:
@@ -179,7 +180,7 @@ min = (b -> c) -- porque es el primer parámetro de la composición
 
 ## Recursividad
 
-Ahora vamos a ver un concepto que ya deben haber visto en otras materias como Algoritmos o Matemática Discreta (Lógica y Estrcuturas Discretas).
+Ahora vamos a ver un concepto que ya deben haber visto en otras materias como Algoritmos o Matemática Discreta (Lógica y Estructuras Discretas).
 
 En Discreta seguramente vieron el concepto de inducción que está muy relacionado con la recursividad. De hecho, la recursividad es una forma de definir funciones o estructuras de datos de forma inductiva.
 
@@ -241,7 +242,7 @@ fibonacci n = fibonacci (n - 1) + fibonacci (n - 2) -- Caso recursivo
 
 Como dijimos antes la recursividad es una forma que tenemos en Haskell de reemplazar las estructuras de control iterativas (y con estado) que tenemos en otros lenguajes.
 
-Veamos algunos ejemplos con listas, haciendo primero un repaso por los patrones de listas.
+Veamos algunos ejemplos con listas, haciendo primero un repaso por los patrones que podemos usar.
 
 ```haskell
 -- Lista vacía y variable anónima
@@ -260,7 +261,7 @@ tail' []       = undefined
 tail' (_:cola) = cola
 ```
 
-En lo que vimos acá arriba cubrimos dos nuevos patrones con los cuales podemos matchear listas: el patrón de lista vacía `[]` y el patrón de cabeza : cola `x:xs` donde `x` es la cabeza y `xs` es la cola. Además, vimos que podemos usar variables anónimas para ignorar partes de la lista que no nos interesan.
+En los ejemplos de arriba aparecen los dos patrones principales que usamos para matchear listas: `[]` y `x:xs`. El patrón de lista vacía `[]` y el patrón de cabeza : cola `x:xs` donde `x` es la cabeza y `xs` es la cola. Además, vimos que podemos usar variables anónimas para ignorar partes de la lista que no nos interesan.
 
 Ahora vamos a redefinir algunas funciones que ya conocemos y usamos con listas, pero esta vez usando recursividad.
 
@@ -322,7 +323,7 @@ Ya hicimos un primer paso importante que fue identificar qué se repite y qué c
 
 La nueva función entonces debería recibir:
 
-- La operacion que combina un elemento con el resultado de la recursión
+- La operación que combina un elemento con el resultado de la recursión
 - El valor del caso base (la semilla)
 - La estructura sobre la que queremos aplicar la función (en este caso una lista)
 
@@ -353,9 +354,9 @@ Otro ejemplo donde `a` y `b` son diferentes es en la función `map''` que vamos 
 map'' transformacion lista = funcion (\x acc -> transformacion x : acc) [] lista
 ```
 
-Viendo la funcion lambda que le pasamos a `funcion` podemos notar que los parametros `x` y `acc` son de tipos diferentes donde `x` es de tipo `a` y `acc` es de tipo `[b]`, entonces en este caso `b` es el tipo de los elementos de la lista resultante.
+Viendo la función lambda que le pasamos a `funcion` podemos notar que los parámetros `x` y `acc` son de tipos diferentes donde `x` es de tipo `a` y `acc` es de tipo `[b]`, entonces en este caso `b` es el tipo de los elementos de la lista resultante.
 
-Entonces, esta nueva función que definimos es una función de orden superior que nos permite abstraer el patrón de recursión que se repite en varias funciones que operan sobre listas. Esta función se llama `foldr` y ya existe en haskell.
+Entonces, esta nueva función que definimos es una función de orden superior que nos permite abstraer el patrón de recursión que se repite en varias funciones que operan sobre listas. Esta función se llama `foldr` y ya existe en Haskell.
 
 ```haskell
 foldr :: (a -> b -> b) -> b -> [a] -> b
@@ -367,6 +368,7 @@ Hasta ahora venimos viendos todos casos de fold donde tenemos una semilla para e
 
 ```haskell
 foldr1 :: (a -> a -> a) -> [a] -> a
+foldr1 _ []     = error "foldr1: lista vacía" -- en este caso explota
 foldr1 _ [x]    = x
 foldr1 combinar (x:xs) = combinar x (foldr1 combinar xs)
 
@@ -388,7 +390,7 @@ foldl combinar semilla (x:xs) = foldl combinar (combinar semilla x) xs
 
 Ahora, ¿por qué tenemos estas dos variantes de fold? ¿Cuál es la diferencia entre `foldr` y `foldl`?
 
-La diferencia principal entre `foldr` y `foldl` es el orden en el que se aplican las combinaciones. `foldr` combina los elementos de la lista de derecha a izquierda, mientras que `foldl` combina los elementos de izquierda a derecha. Algo importante a notar es que lo que cambia es la manera en la que se asocian las operaciones, no el orden de los elementos. En ambos casos el orden de los elementos es el mismo, pero la forma en la que se agrupan las operaciones es diferente. Siempre "lee" el primer elemento de la lista de izquierda a derecha, pero la forma en la que se agrupan las operaciones es diferente y esto puede afectar el resultado dependiendo de la operación que estemos usando.
+La diferencia principal entre `foldr` y `foldl` es el orden en el que se aplican las combinaciones. `foldr` combina los elementos de la lista de derecha a izquierda, mientras que `foldl` combina los elementos de izquierda a derecha. Algo importante a notar es que lo que cambia es la manera en la que se asocian las operaciones y no el orden de los elementos.
 
 En los casos donde la operación es asociativa y conmutativa, como la suma o la multiplicación, no importa el orden en el que se apliquen las combinaciones, entonces `foldr` y `foldl` darán el mismo resultado. Sin embargo, en casos donde la operación no es asociativa o conmutativa, como la resta o la división, el orden sí importa y `foldr` y `foldl` pueden dar resultados diferentes.
 
@@ -423,7 +425,7 @@ foldl (-) 0 [1, 2, 3]
 
 ### Bonus track
 
-Redefiniendo funciones usando `foldr` y composición de funciones. En los ejemplos anteriores usamos lambdas para definir las funciones que le pasamos a `foldr` pero durante la clase fuimos un pasito más adelante y vimos directamente que podíamos usar composicion de funciones de la misma forma que lo hicimos cuando hablamos de currificación.
+Redefiniendo funciones usando `foldr` y composición de funciones. En los ejemplos anteriores usamos lambdas para definir las funciones que le pasamos a `foldr` pero durante la clase fuimos un pasito más adelante y vimos directamente que podíamos usar composición de funciones de la misma forma que lo hicimos cuando hablamos de currificación.
 
 ```haskell
 all''' :: (a -> Bool) -> [a] -> Bool
