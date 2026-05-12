@@ -33,6 +33,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v5
 
+      - name: Approve dependency build scripts
+        run: pnpm approve-builds
+
       - name: Install dependencies
         run: pnpm install
 
