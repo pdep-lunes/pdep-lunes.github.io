@@ -8,7 +8,7 @@ tags: [funcional, recursividad, listas infinitas, lazy, fold]
 ## Tarea para la clase que viene:
 
 - Terminar con las correcciones de la [Entrega 1](https://docs.google.com/document/d/1yYb_lHIGgk-anCsJCIsM2rpXjxXp8t8pczgkO1AavGU/edit?tab=t.0) del TP grupal de Funcional.
-- Avanzar con la segunda entrega del TP de Funcional.
+- Avanzar con la segunda entrega del TP de Funcional que tiene fecha límite de entrega el 15/6 (sí, es feriado) y vamos a corregir de forma asincrónica.
 - Hacer la práctica "[Disfuncional](https://docs.google.com/document/d/1Uo444tEtRBZqbSxQD6u_mV-XnGUqsTezCA97_TTn8Uk/edit?usp=sharing)" sobre malas prácticas de programación (code smells).
 
 ---
