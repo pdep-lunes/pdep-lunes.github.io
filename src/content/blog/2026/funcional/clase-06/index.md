@@ -10,6 +10,11 @@ tags: [funcional, recursividad, listas infinitas, lazy, fold]
 - Terminar con las correcciones de la [Entrega 1](https://docs.google.com/document/d/1yYb_lHIGgk-anCsJCIsM2rpXjxXp8t8pczgkO1AavGU/edit?tab=t.0) del TP grupal de Funcional.
 - Avanzar con la segunda entrega del TP de Funcional que tiene fecha límite de entrega el 15/6 (sí, es feriado) y vamos a corregir de forma asincrónica.
 - Hacer la práctica "[Disfuncional](https://docs.google.com/document/d/1Uo444tEtRBZqbSxQD6u_mV-XnGUqsTezCA97_TTn8Uk/edit?usp=sharing)" sobre malas prácticas de programación (code smells).
+- Pueden comenzar a realizar [parciales](https://www.pdep.com.ar/material/parciales) para practicar. Les recomendamos:
+  - Si todavía no lo hicieron,  [Tierra de Bárbaros](https://docs.google.com/document/d/1mBwfHLXmcZKLHSy22exTxibwny9x2a81hKW000tOFMQ/edit) con [posible resolución](https://drive.google.com/drive/folders/1AfNARmbRC3ODY-jYcFqzBqn9shs4QMRU)
+  - [Padrinos mágicos](https://drive.google.com/file/d/18c1VXjtvMaJeIIHE-gMtTOWycW4r62Ig/view).
+  - [Pinky y Cerebro](https://docs.google.com/document/d/12PSO8F15XHRvOn53khcSMqku6qVuo0j2r9g77GCWZHk/edit)
+  - Y todos los que tengan resolución así tienen con qué comparar.
 
 ---
 
@@ -403,3 +408,7 @@ foldl' (+) 0 [1..1000000]
 ## Links Útiles
 
 - Solución completa de Haskell Chef (incluído punto D sobre lazy evaluation). [https://github.com/pdep-lunes/pdep-parciales/tree/main/funcional/haskell-chef](https://github.com/pdep-lunes/pdep-parciales/tree/main/funcional/haskell-chef)
+- [Listas infinitas](http://wiki.uqbar.org/wiki/articles/estrategias-de-evaluacion.html#tocAnchor-1-7-4)
+- [Lazy evaluation](http://wiki.uqbar.org/wiki/articles/estrategias-de-evaluacion.html#tocAnchor-1-7)
+- [Estrategias de evaluación](http://wiki.uqbar.org/wiki/articles/estrategias-de-evaluacion.html)
+- [Posible solución de Disfuncional](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/funcional/clase-09/src/Disfuncional.hs)
