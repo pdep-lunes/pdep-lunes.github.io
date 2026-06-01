@@ -1,0 +1,405 @@
+---
+title: Listas infinitas y Lazy Evaluation
+date: "2026-06-01"
+description: "Estrategias de evaluación, eager (by-value) vs lazy (by-name) evaluation. Listas infinitas y cómo funcionan en Haskell."
+tags: [funcional, recursividad, listas infinitas, lazy, fold]
+---
+
+## Tarea para la clase que viene:
+
+- Terminar con las correcciones de la [Entrega 1](https://docs.google.com/document/d/1yYb_lHIGgk-anCsJCIsM2rpXjxXp8t8pczgkO1AavGU/edit?tab=t.0) del TP grupal de Funcional.
+- Avanzar con la segunda entrega del TP de Funcional.
+- Hacer la práctica "[Disfuncional](https://docs.google.com/document/d/1Uo444tEtRBZqbSxQD6u_mV-XnGUqsTezCA97_TTn8Uk/edit?usp=sharing)" sobre malas prácticas de programación (code smells).
+
+---
+
+# Listas infinitas y Lazy evaluation
+
+## Listas infinitas:
+
+Ya vimos que en Haskell podemos modelas muchas cosas con listas. Tuvimos listas de ingredientes, de perros, de funciones, de números, etc.
+
+```haskell
+notasPosibles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+Pero, ¿qué pasa si tenemos que modelar una lista del 1 al 1000? Podríamos pensar alguna solución recursiva como la siguiente:
+
+```haskell
+hastaN :: Int -> Int -> [Int] -> [Int]
+hastaN base n lista
+ | base > n = []
+ | otherwise = base : hastaN (base + 1) n lista
+
+hastaN 1 1000 []
+-- hastaN 1 1000 []
+-- 1 : hastaN 2 1000 []
+-- 1 : 2 : hastaN 3 1000 []
+-- ...
+-- 1 : 2 : 3 : ... : 1000 : hastaN 1001 1000 []
+-- 1 : 2 : 3 : ... : 1000 : []
+-- [1, 2, 3, ..., 1000]
+```
+
+Pero haskell ya nos da una herramienta para esto y lo usamos con la siguiente sintaxis:
+
+```haskell
+[1..1000]
+```
+
+También sirve para generar listas de caracteres:
+
+```haskell
+abecedario = ['a'..'z']
+```
+
+O listas de números con un paso específico:
+
+```haskell
+[0, 0.5 .. 10]
+-- [0.0, 0.5, 1.0, 1.5, ..., 10.0]
+
+paresAlCien = [2, 4 .. 100]
+```
+
+Y no sólo eso, sino que también podemos generar listas infinitas:
+
+```haskell
+infinita = [1..]
+```
+
+Lo que nos queda por resolver es cómo es posible trabajar con listas infinitas. ¿Qué pasa cuando probamos algunas de las siguientes expresiones? ¿Terminan? ¿No terminan? ¿Depende de la función que usemos? (acá en la bitácora va con spoilers para que quede todo más claro pero es un buen ejercicio que piensen ustedes antes de leer la respuesta)
+
+```haskell
+head      [1..] -- devuelve 1
+sum       [1..] -- no termina de sumar núeros, se queda ejecutando
+take 10   [1..] -- devuelve los primeros 10 números de la lista infinita => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ya que no necesita evaluar el resto de la lista
+length    [1..] -- no termina, necesita evaluar toda la lista para contar sus elementos
+all even  [1..] -- depende de los valores de la lista, en este caso al evaluar "even 1" devuelve False, entonces no necesita evaluar el resto de la lista => False
+any (>20) [1..] -- depende de los valores de la lista, en este caso al evaluar ">20 1" devuelve False, entonces sigue evaluando, ">20 2" devuelve False, sigue evaluando, ... ">20 21" devuelve True, entonces no necesita evaluar el resto de la lista => True
+head . filter (> 3) $ [1..] -- Se expande la composición y se evalúa head (filter (> 3) [1..]). El filtro va evaluando cada elemento de la lista hasta que encuentra el primero que cumple la condición (> 3), que es el 4, cuando lo encuentra ya tiene algo con la forma (x:xs), en este caso 4 : filter (> 3) [5..], entonces head devuelve 4. Si la condición nunca se cumple, el filtro nunca encuentra un elemento que cumpla la condición y sigue evaluando la lista infinitamente => no termina.
+head . filter (< 3) $ [5..] -- Se expande la composición y se evalúa head (filter (< 3) [5..]). El filtro va evaluando cada elemento de la lista hasta que encuentra el primero que cumple la condición (< 3), que es el 2, cuando lo encuentra ya tiene algo con la forma (x:xs), en este caso 2 : filter (< 3) [4..], entonces head devuelve 2. Si la condición nunca se cumple, el filtro nunca encuentra un elemento que cumpla la condición y sigue evaluando la lista infinitamente => no termina.
+```
+
+También existen funciones para generar listas infinitas.
+
+```haskell
+repeat :: a -> [a]
+repeat x = x : repeat x
+
+repeat "Hola"
+> ["Hola", "Hola", "Hola", ...]
+```
+
+```haskell
+cycle :: [a] -> [a]
+cycle xs = xs ++ cycle xs
+
+cycle [1, 2, 3]
+> [1, 2, 3, 1, 2, 3, 1, 2, 3, ...]
+```
+
+```haskell
+iterate :: (a -> a) -> a -> [a]
+iterate f x = x : iterate f (f x)
+
+iterate (*2) 2
+> [2, 4, 8, 16, 32, ...]
+```
+
+## Lazy evaluation
+
+Si tenemos una función como `siguiente` y la aplicamos a una expresión, ¿en qué orden se evalúan las operaciones?
+
+```haskell
+siguiente :: Int -> Int
+siguiente x = x + 1
+
+-- siguiente (2 * 3) <== empezando por la expresión de adentro
+-- siguiente 6
+-- (x + 1) donde x es 6
+-- 6 + 1
+-- 7
+
+-- siguiente (2 * 3) <== empezando por la función de afuera
+-- (x + 1) donde x es (2 * 3)
+-- (2 * 3) + 1
+-- 6 + 1
+-- 7
+```
+
+Vemos que en ambos casos la operación termina y nos da el mismo resultado. Sin embargo, en otros lenguajes, podemos encontrarnos con situaciones como la siguiente:
+
+```js
+// En JavaScript
+let x = 0;
+x + (x = 1);
+// Puede ser:
+// De izquierda a derecha => 0 + 1 = 1
+// De derecha a izquierda => 1 + 1 = 2
+```
+
+## Estrategias básicas de evaluación
+
+Para analizar cómo se evalúan las expresiones, pensamos en cada función aplicada a sus parámetros como algo que puede "reducirse" a otra expresión. Por ejemplo:
+
+```haskell
+multiplicar :: (Int, Int) -> Int
+multiplicar (x, y) = x * y
+
+multiplicar (1 + 2, 2 + 3)
+
+-- Tenemos 3 operaciones a realizar:
+-- 1. (1 + 2)
+-- 2. (2 + 3)
+-- 3. multiplicar (..., ...)
+```
+
+Y como vimos antes, al menos dos formas de resolver esta expresión:
+- Call by value (evaluar los parámetros antes de aplicar la función)
+- Call by name (aplicar la función antes de evaluar los parámetros)
+
+### Call by value (de adentro hacia afuera)
+
+Resolvemos primero la operación más interna. Si hay más de una al mismo nivel, la más a la izquierda.
+
+```haskell
+multiplicar (1 + 2, 2 + 3)
+multiplicar (3, 2 + 3)     -- resolvemos 1 + 2
+multiplicar (3, 5)         -- resolvemos 2 + 3
+3 * 5                      -- aplicamos multiplicar
+15
+```
+
+Los parámetros se resuelven **antes** de pasárselos a la función.
+
+### Call by name (de afuera hacia adentro)
+
+Resolvemos primero la operación más externa. Las funciones se aplican **antes** de que sus parámetros sean evaluados.
+
+```haskell
+multiplicar (1 + 2, 2 + 3)
+(1 + 2) * (2 + 3)          -- aplicamos multiplicar
+3 * (2 + 3)                -- resolvemos 1 + 2
+3 * 5                      -- resolvemos 2 + 3
+15
+```
+
+> **Nota**: los operadores aritméticos como `*` son **estrictos** — necesitan que sus dos operandos estén evaluados para poder operar. Por eso, aunque empezamos de afuera hacia adentro, eventualmente tenemos que resolver las sumas.
+
+## Evaluaciones que no terminan
+
+```haskell
+infinito :: Int
+infinito = 1 + infinito
+
+infinito
+1 + infinito
+1 + (1 + infinito)
+1 + (1 + (1 + infinito))
+-- ...nunca termina
+```
+
+Ahora, ¿qué pasa si usamos `infinito` en una expresión donde no hace falta calcularlo?
+
+```haskell
+fst :: (a, a) -> a
+fst (x, _) = x
+
+fst (0, infinito)
+```
+
+**Con call-by-value**: intenta evaluar `infinito` antes de aplicar `fst`. No termina.
+
+```haskell
+fst (0, infinito)
+fst (0, 1 + infinito)
+fst (0, 1 + (1 + infinito))
+-- ...nunca termina
+```
+
+**Con call-by-name**: aplica `fst` primero, sin evaluar el segundo parámetro. Termina.
+
+```haskell
+fst (0, infinito)
+0
+```
+
+---
+
+## Lazy evaluation = call-by-name + reutilización de resultados
+
+Llegamos a lo que nos importa: **Haskell usa lazy evaluation (evaluación perezosa)**, lo que significa que una expresión sólo se evalúa cuando su valor es realmente necesario.
+
+Pero hay un detalle importante: Haskell no usa call-by-name puro. Usa **call-by-need**, que agrega una optimización clave: si una expresión ya fue evaluada, el resultado se **reutiliza** en vez de recalcularse. Esto evita el costo de evaluar la misma expresión múltiples veces.
+
+```haskell
+-- En call-by-name puro, si 'x' aparece dos veces,
+-- se evaluaría dos veces.
+-- En call-by-need, se evalúa una sola vez y se guarda.
+let x = 1 + 1
+in x + x
+-- x se evalúa una sola vez => 2 + 2 => 4
+```
+
+---
+
+## Ejemplos
+
+### `head` y `filter` con listas infinitas
+
+```haskell
+head . filter (3 <) $ [1..]
+
+-- Se expande la composición
+head (filter (3 <) [1..])
+
+-- head necesita el primer elemento de la lista,
+-- así que filter empieza a recorrer
+head (filter (3 <) [2..])  -- 1 no cumple
+head (filter (3 <) [3..])  -- 2 no cumple
+head (filter (3 <) [4..])  -- 3 no cumple
+head (4 : filter (3 <) [5..])  -- 4 cumple!
+4
+```
+
+Nunca necesitamos evaluar la lista infinita completa. Pero si el filtro nunca se satisface, la evaluación no termina:
+
+```haskell
+head . filter (< 0) $ [1..]
+-- filter nunca encuentra un número negativo
+-- en la lista de naturales => no termina
+```
+
+Acá podemos ver que muchas veces la respuesta a "¿termina?" no es un sí o un no, sino que depende de la función que estemos usando y de la condición que estemos evaluando.
+
+### `takeWhile` con listas infinitas
+
+```haskell
+takeWhile (< 5) [1..]
+-- [1, 2, 3, 4]
+```
+
+Solo evalúa los elementos hasta que la condición falla. Una lista infinita como fuente de datos es perfectamente válida si consumimos una parte finita de ella.
+
+### `undefined` como prueba de laziness
+
+`undefined` es una expresión que explota si se evalúa. Podemos usarla para verificar que Haskell realmente no está evaluando algo:
+
+```haskell
+fst (42, undefined)
+-- 42
+-- El segundo parámetro nunca se evalúa
+
+const 5 undefined
+-- 5
+
+True || undefined
+-- True
+-- El operador || es lazy en su segundo argumento
+```
+
+Si Haskell fuera eager, los tres ejemplos fallarían con un error porque al evaluar `undefined` explota. Pero como Haskell es lazy, no evalúa `undefined` a menos que sea necesario, y en estos casos no lo es.
+
+### Listas infinitas como abstracción
+
+La lazy evaluation hace posible trabajar con listas infinitas como si fueran valores normales:
+
+```haskell
+-- Indexar cualquier lista sin conocer su longitud
+zip [1..] ["hola", "mundo", "lazy"]
+-- [(1,"hola"), (2,"mundo"), (3,"lazy")]
+
+-- Generar los primeros N números de Fibonacci
+fibs = 0 : 1 : zipWith (+) fibs (tail fibs)
+take 10 fibs
+-- [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+-- Generar una lista de componentes infinitos como en Haskell Chef
+armarComponente :: Int -> Componente
+armarComponente n = Componente ("Ingrediente " ++ show n) n
+
+componentesInfinitos :: [Componente]
+componentesInfinitos = map armarComponente [1..]
+```
+
+### Folds
+
+Recordemos las definiciones de las dos funciones que vimos la última clase, `foldr` y `foldl`:
+
+```haskell
+foldr f i []     = i
+foldr f i (x:xs) = f x (foldr f i xs)
+-- el caso recursivo se llama dentro de la función f, en su segundo argumento.
+
+foldl f i []     = i
+foldl f i (x:xs) = foldl f (f i x) xs
+-- el caso recursivo se es directamente foldl y vamos "acumulando" el resultado en el segundo argumento que llamabamos semilla.
+```
+
+Y `repeat`, que genera una lista infinita:
+
+```haskell
+repeat :: a -> [a]
+repeat x = x : repeat x
+
+repeat False
+-- False : False : False : ...
+```
+
+**Con `foldr`**:
+
+```haskell
+-- En este caso lo que está más afuera es el foldr, así que se aplica primero:
+foldr (&&) True (repeat False)
+-- f = (&&)
+-- i = True
+-- (x:xs) = (False : repeat False) => x = False, xs = repeat False
+(&&) False (foldr (&&) True (repeat False))
+-- Esto se traduce a:
+False && (foldr (&&) True (repeat False))
+-- && es lazy en su segundo argumento:
+-- False && cualquier_cosa = False y por ende sin evaluar el resto del foldr =>
+False
+```
+
+`foldr` puede terminar con listas infinitas si la función es lazy en su segundo argumento.
+
+**Con `foldl`**:
+
+```haskell
+foldl (&&) True (repeat False)
+foldl (&&) (True && False) (repeat False)
+foldl (&&) (False && False) (repeat False)
+-- foldl siempre necesita recorrer toda la lista
+-- antes de devolver un resultado => no termina
+```
+
+`foldl` no puede terminar con listas infinitas porque acumula el resultado en el acumulador y necesita llegar al final de la lista para devolver algo. Se queda siempre evaluando el `foldl` que es la operación más externa, sin llegar a evaluar el resultado de la función `f` (en este caso `&&`) hasta que no se recorra toda la lista.
+
+**Bonus — `foldl` y stack overflow con listas finitas**:
+
+Incluso con listas finitas, `foldl` tiene un problema: acumula expresiones sin evaluar (llamadas *thunks*) en cada paso, lo que puede causar un stack overflow con listas grandes:
+
+```haskell
+foldl (+) 0 [1..1000000]
+-- Acumula: ((((0 + 1) + 2) + 3) + ...)
+-- Puede causar stack overflow
+```
+
+Para eso existe `foldl'` (del módulo `Data.List`), que fuerza la evaluación del acumulador en cada paso:
+
+```haskell
+import Data.List (foldl')
+
+foldl' (+) 0 [1..1000000]
+-- Evalúa el acumulador en cada paso => ok
+```
+
+> **Regla práctica**: en Haskell, preferí `foldr` para listas potencialmente infinitas o cuando la función es lazy. Usá `foldl'` (con apóstrofe) para reducciones sobre listas finitas donde necesitás el resultado final.
+
+---
+
+## Links Útiles
+
+- Solución completa de Haskell Chef (incluído punto D sobre lazy evaluation). [https://github.com/pdep-lunes/pdep-parciales/tree/main/funcional/haskell-chef](https://github.com/pdep-lunes/pdep-parciales/tree/main/funcional/haskell-chef)
