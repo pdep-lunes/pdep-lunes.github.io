@@ -29,6 +29,21 @@ export default defineConfig({
             }
           },
         },
+        {
+          name: "copy-button",
+          pre(node) {
+            node.children.push({
+              type: "element",
+              tagName: "button",
+              properties: {
+                class: "copy-btn",
+                "aria-label": "Copiar código",
+                "data-copy-btn": "",
+              },
+              children: [{ type: "text", value: "Copiar" }],
+            });
+          },
+        },
       ],
     },
   },
