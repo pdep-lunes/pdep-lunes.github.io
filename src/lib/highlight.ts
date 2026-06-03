@@ -12,6 +12,7 @@ export async function highlightCode(code: string, lang: string): Promise<string>
     try {
       await hl.loadLanguage(lang as any)
     } catch {
+      console.warn(`[Quiz] Unknown language "${lang}", falling back to plain text`)
       lang = 'text'
     }
   }
