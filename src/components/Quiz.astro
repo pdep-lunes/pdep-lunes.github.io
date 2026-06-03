@@ -28,9 +28,11 @@ const highlightedCode = code ? await highlightCode(code, lang) : null
   data-quiz
 >
   <div class="flex gap-2 items-start mb-3">
-    <span class="text-base leading-5 mt-0.5 select-none">🤔</span>
     <div class="flex-1 min-w-0">
-      <div class="text-xs font-semibold text-black dark:text-white mb-1.5">Chequeo rápido</div>
+      <div class="text-xs font-semibold text-black dark:text-white mb-1.5 flex items-center">
+        <span class="text-base leading-5 select-none">🤔</span>
+        <span class="ml-2">Chequeo rápido</span>
+      </div>
       {highlightedCode && (
         <div
           class="rounded-md overflow-hidden mb-2 [&_pre]:!m-0 [&_pre]:!rounded-md [&_pre]:p-3 [&_pre]:text-xs [&_pre]:leading-relaxed"
@@ -41,12 +43,12 @@ const highlightedCode = code ? await highlightCode(code, lang) : null
     </div>
   </div>
 
-  <div class="flex flex-wrap gap-1.5 pl-6" data-options>
+  <div class="flex flex-wrap gap-1.5 pl-0" data-options>
     {options.map((opt) => (
       <button
         class="quiz-option px-3 py-1 rounded-full border-[1.5px] border-gray-300 text-gray-600 bg-white dark:bg-gray-900 dark:border-gray-600 dark:text-gray-300 text-xs cursor-pointer hover:border-gray-400 transition-colors font-mono"
         data-correct={opt.correct ? '' : undefined}
-        data-explanation={opt.correct ? (opt.explanation ?? '') : undefined}
+        data-option-explanation={opt.correct ? (opt.explanation ?? '') : undefined}
         data-original-text={opt.text}
       >
         {opt.text}
@@ -55,7 +57,7 @@ const highlightedCode = code ? await highlightCode(code, lang) : null
   </div>
 
   <p
-    class="quiz-explanation text-xs pl-6 mt-2 leading-relaxed hidden"
+    class="quiz-explanation text-sm pl-0 my-2 leading-relaxed hidden text-left"
     data-explanation
   />
 </div>
@@ -148,27 +150,22 @@ const highlightedCode = code ? await highlightCode(code, lang) : null
 
         const isCorrect = btn.hasAttribute('data-correct')
         const correctBtn = optionBtns.find(b => b.hasAttribute('data-correct'))
-        const explanation = correctBtn?.dataset.explanation ?? ''
+        const explanation = correctBtn?.dataset.optionExplanation ?? ''
 
         quiz.dataset.answered = isCorrect ? 'correct' : 'wrong'
 
         optionBtns.forEach((b) => {
           if (b === btn) {
             b.dataset.state = isCorrect ? 'selected-correct' : 'selected-wrong'
-            b.textContent += isCorrect ? ' ✓' : ' ✗'
           } else if (b === correctBtn && !isCorrect) {
             b.dataset.state = 'correct-reveal'
-            b.textContent += ' ✓'
           } else {
             b.dataset.state = 'dimmed'
           }
         })
 
         if (explanationEl && explanation) {
-          const correctText = correctBtn?.dataset.originalText ?? ''
-          explanationEl.textContent = isCorrect
-            ? `¡Correcto! — ${explanation}`
-            : `La respuesta correcta es "${correctText}". ${explanation}`
+          explanationEl.textContent = explanation
           explanationEl.dataset.outcome = isCorrect ? 'correct' : 'wrong'
           explanationEl.classList.remove('hidden')
         }

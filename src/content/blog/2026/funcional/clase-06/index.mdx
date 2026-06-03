@@ -4,6 +4,7 @@ date: "2026-06-01"
 description: "Estrategias de evaluación, eager (by-value) vs lazy (by-name) evaluation. Listas infinitas y cómo funcionan en Haskell."
 tags: [funcional, recursividad, listas infinitas, lazy, fold]
 ---
+import Quiz from '@components/Quiz.astro';
 
 ## Tarea para la clase que viene:
 
@@ -33,8 +34,8 @@ Pero, ¿qué pasa si tenemos que modelar una lista del 1 al 1000? Podríamos pen
 ```haskell
 hastaN :: Int -> Int -> [Int] -> [Int]
 hastaN base n lista
- | base > n = []
- | otherwise = base : hastaN (base + 1) n lista
+  | base > n = []
+  | otherwise = base : hastaN (base + 1) n lista
 
 hastaN 1 1000 []
 -- hastaN 1 1000 []
@@ -402,6 +403,96 @@ foldl' (+) 0 [1..1000000]
 ```
 
 > **Regla práctica**: en Haskell, preferí `foldr` para listas potencialmente infinitas o cuando la función es lazy. Usá `foldl'` (con apóstrofe) para reducciones sobre listas finitas donde necesitás el resultado final.
+
+---
+
+## Repaso con preguntas
+
+
+<Quiz
+  question="¿Qué pasa al evaluar `length [1..]` en la consola de Haskell (ghci)?"
+  options={[
+    { text: "Devuelve infinito" },
+    { text: "No termina", correct: true, explanation: "La función `length` necesita evaluar toda la lista para contar sus elementos, y como la lista es infinita, nunca terminará." },
+    { text: "Devuelve 0" },
+    { text: "Error de compilación" }
+  ]}
+/>
+
+
+<Quiz
+  code={`infinito :: Int
+  infinito = 1 + infinito
+  
+  fst (42, infinito)`}
+  lang="haskell"
+  question="¿Qué pasa al evaluar `fst (42, infinito)`?"
+  options={[
+    { text: "No termina por (call-by-value)" },
+    { text: "Devuelve 0" },
+    { text: "Devuelve 42", correct: true, explanation: "Haskell es lazy, nunca evalúa el segundo elmento de la tupla." },
+    { text: "Infinito" }
+  ]}
+/>
+
+<Quiz
+  code={`head . filter (< 0) $ [1..]`}
+  lang="haskell"
+  question="¿Qué pasa al evaluar este código en ghci?"
+  options={[
+    { text: "Devuelve 0" },
+    { text: "Devuelve -1" },
+    { text: "No termina", correct: true, explanation: "La condición del filter nunca se cumple con lo cual nunca llega a devolver algo que cumpla con el patrón que necesita head (x:xs) para poder obtener esa `x` que sería el primer elemento. Continúa evaluando sin llegar a un resultado." },
+    { text: "Error de compilación" }
+  ]}
+/>
+
+<Quiz
+  code={`takeWhile (< 5) [1..]`}
+  lang="haskell"
+  question="¿Qué pasa al evaluar este código en ghci?"
+  options={[
+    { text: "[1, 2, 3, 4]", correct: true, explanation: "La condición del filter nunca se cumple con lo cual nunca llega a devolver algo que cumpla con el patrón que necesita head (x:xs) para poder obtener esa `x` que sería el primer elemento. Continúa evaluando sin llegar a un resultado." },
+    { text: "No termina" },
+    { text: "[1, 2, 3, 4, 5]" },
+    { text: "Error de compilación" }
+  ]}
+/>
+
+<Quiz
+  code={`take 4 . iterate (*2) $ 2`}
+  lang="haskell"
+  question="¿Qué pasa al evaluar este código en ghci?"
+  options={[
+    { text: "[2, 4, 6, 8]" },
+    { text: "No termina" },
+    { text: "[4, 8, 16, 32]" },
+    { text: "[2, 4, 8, 16]", correct: true, explanation: "La condición del filter nunca se cumple con lo cual nunca llega a devolver algo que cumpla con el patrón que necesita head (x:xs) para poder obtener esa `x` que sería el primer elemento. Continúa evaluando sin llegar a un resultado." },
+  ]}
+/>
+
+<Quiz
+  question="¿Cuál de estas afirmaciones es correcta?"
+  options={[
+    { text: "foldl puede terminar con listas infinitas si la función es lazy" },
+    { text: "foldr necesita recorrer toda la lista antes de devovler un resultado" },
+    { text: "foldl' es preferible a foldl para listas finitas grandes", correct: true, explanation: "foldl acumula thunks que pueden causar stack overflow con listas grandes, mientras que foldl' fuerza la evaluación del acumulador en cada paso." },
+    { text: "foldr siempre necesita evaluar toda la lista" },
+  ]}
+/>
+
+<Quiz
+  question="¿Cuál de estas afirmaciones sobre foldr y foldl con listas infinitas es correcta?"
+  code={`foldr (&&) True (repeat False)   -- (A)
+foldl (&&) True (repeat False)   -- (B)`}
+  lang="haskell"
+  options={[
+    { text: "Ambas terminan, devuelven False" },
+    { text: "Ninguna termina, las dos recorren la lista infinita" },
+    { text: "(A) termina devolviendo False, (B) no termina", correct: true, explanation: "foldr aplica la función de afuera hacia adentro: evalúa False && (...) y como && es lazy en su segundo argumento, devuelve False sin evaluar el resto. foldl en cambio acumula el resultado y necesita llegar al final de la lista antes de devolver algo — con una lista infinita, nunca termina." },
+    { text: "(A) no termina, (B) termina devolviendo False" }
+  ]}
+/>
 
 ---
 
