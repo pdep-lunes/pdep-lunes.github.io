@@ -16,9 +16,11 @@ interface Props {
 
 const { question, options, code, lang = 'haskell' } = Astro.props
 
-const highlightedCode = code ? await highlightCode(code, lang) : null
+if (!options.some(o => o.correct)) {
+  console.warn('[Quiz] No option marked as correct. Add `correct: true` to one option.')
+}
 
-const correctOption = options.find(o => o.correct)
+const highlightedCode = code ? await highlightCode(code, lang) : null
 ---
 
 <div
@@ -45,6 +47,7 @@ const correctOption = options.find(o => o.correct)
         class="quiz-option px-3 py-1 rounded-full border-[1.5px] border-gray-300 text-gray-600 bg-white dark:bg-gray-900 dark:border-gray-600 dark:text-gray-300 text-xs cursor-pointer hover:border-gray-400 transition-colors font-mono"
         data-correct={opt.correct ? '' : undefined}
         data-explanation={opt.correct ? (opt.explanation ?? '') : undefined}
+        data-original-text={opt.text}
       >
         {opt.text}
       </button>
@@ -97,6 +100,37 @@ const correctOption = options.find(o => o.correct)
 
   .quiz-explanation[data-outcome="correct"] { color: #065f46; }
   .quiz-explanation[data-outcome="wrong"]   { color: #991b1b; }
+
+  :global(.dark) .quiz-container[data-answered="correct"] {
+    border-color: #6ee7b7;
+    background-color: rgba(6, 95, 70, 0.2);
+  }
+  :global(.dark) .quiz-container[data-answered="wrong"] {
+    border-color: #fca5a5;
+    background-color: rgba(153, 27, 27, 0.15);
+  }
+  :global(.dark) .quiz-option[data-state="selected-correct"] {
+    border-color: #6ee7b7;
+    background-color: rgba(6, 95, 70, 0.25);
+    color: #6ee7b7;
+  }
+  :global(.dark) .quiz-option[data-state="selected-wrong"] {
+    border-color: #fca5a5;
+    background-color: rgba(153, 27, 27, 0.2);
+    color: #fca5a5;
+  }
+  :global(.dark) .quiz-option[data-state="correct-reveal"] {
+    border-color: #6ee7b7;
+    background-color: rgba(6, 95, 70, 0.25);
+    color: #6ee7b7;
+  }
+  :global(.dark) .quiz-option[data-state="dimmed"] {
+    border-color: #374151;
+    background-color: transparent;
+    color: #4b5563;
+  }
+  :global(.dark) .quiz-explanation[data-outcome="correct"] { color: #6ee7b7; }
+  :global(.dark) .quiz-explanation[data-outcome="wrong"]   { color: #fca5a5; }
 </style>
 
 <script>
@@ -131,7 +165,7 @@ const correctOption = options.find(o => o.correct)
         })
 
         if (explanationEl && explanation) {
-          const correctText = correctBtn?.textContent?.replace(' ✓', '') ?? ''
+          const correctText = correctBtn?.dataset.originalText ?? ''
           explanationEl.textContent = isCorrect
             ? `¡Correcto! — ${explanation}`
             : `La respuesta correcta es "${correctText}". ${explanation}`
