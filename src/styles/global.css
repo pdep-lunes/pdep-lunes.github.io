@@ -74,6 +74,36 @@ article pre[data-language]::before {
   user-select: none;
 }
 
+article pre .copy-btn {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.5rem;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.65rem;
+  font-family: 'Fira Code', monospace;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, background 0.15s, color 0.15s;
+  user-select: none;
+}
+
+article pre:hover .copy-btn {
+  opacity: 1;
+}
+
+article pre .copy-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+article pre:hover[data-language]::before {
+  opacity: 0;
+}
+
 article :not(pre) > code {
   @apply font-mono text-sm;
   @apply bg-black/10 dark:bg-white/10;
