@@ -46,7 +46,7 @@ const highlightedCode = code ? await highlightCode(code, lang) : null
   <div class="flex flex-wrap gap-1.5 pl-0" data-options>
     {options.map((opt) => (
       <button
-        class="quiz-option px-3 py-1 rounded-full border-[1.5px] border-gray-300 text-gray-600 bg-white dark:bg-gray-900 dark:border-gray-600 dark:text-gray-300 text-xs cursor-pointer hover:border-gray-400 transition-colors font-mono"
+        class="quiz-option px-3 py-1 rounded-full border-[1.5px] border-gray-300 text-gray-600 bg-white dark:bg-gray-900 dark:border-gray-600 dark:text-gray-300 text-xs cursor-pointer hover:border-gray-400 transition-colors font-mono text-left"
         data-correct={opt.correct ? '' : undefined}
         data-option-explanation={opt.correct ? (opt.explanation ?? '') : undefined}
         data-original-text={opt.text}
@@ -136,40 +136,35 @@ const highlightedCode = code ? await highlightCode(code, lang) : null
 </style>
 
 <script>
-  document.querySelectorAll<HTMLElement>('[data-quiz]').forEach((quiz) => {
-    let answered = false
-    const optionBtns = Array.from(
-      quiz.querySelectorAll<HTMLButtonElement>('[data-options] button')
-    )
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as Element).closest<HTMLButtonElement>('[data-options] button')
+    if (!btn) return
+    const quiz = btn.closest<HTMLElement>('[data-quiz]')
+    if (!quiz || quiz.dataset.answered) return
+
+    const optionBtns = Array.from(quiz.querySelectorAll<HTMLButtonElement>('[data-options] button'))
     const explanationEl = quiz.querySelector<HTMLElement>('[data-explanation]')
 
-    optionBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        if (answered) return
-        answered = true
+    const isCorrect = btn.hasAttribute('data-correct')
+    const correctBtn = optionBtns.find(b => b.hasAttribute('data-correct'))
+    const explanation = correctBtn?.dataset.optionExplanation ?? ''
 
-        const isCorrect = btn.hasAttribute('data-correct')
-        const correctBtn = optionBtns.find(b => b.hasAttribute('data-correct'))
-        const explanation = correctBtn?.dataset.optionExplanation ?? ''
+    quiz.dataset.answered = isCorrect ? 'correct' : 'wrong'
 
-        quiz.dataset.answered = isCorrect ? 'correct' : 'wrong'
-
-        optionBtns.forEach((b) => {
-          if (b === btn) {
-            b.dataset.state = isCorrect ? 'selected-correct' : 'selected-wrong'
-          } else if (b === correctBtn && !isCorrect) {
-            b.dataset.state = 'correct-reveal'
-          } else {
-            b.dataset.state = 'dimmed'
-          }
-        })
-
-        if (explanationEl && explanation) {
-          explanationEl.textContent = explanation
-          explanationEl.dataset.outcome = isCorrect ? 'correct' : 'wrong'
-          explanationEl.classList.remove('hidden')
-        }
-      })
+    optionBtns.forEach((b) => {
+      if (b === btn) {
+        b.dataset.state = isCorrect ? 'selected-correct' : 'selected-wrong'
+      } else if (b === correctBtn && !isCorrect) {
+        b.dataset.state = 'correct-reveal'
+      } else {
+        b.dataset.state = 'dimmed'
+      }
     })
+
+    if (explanationEl && explanation) {
+      explanationEl.textContent = explanation
+      explanationEl.dataset.outcome = isCorrect ? 'correct' : 'wrong'
+      explanationEl.classList.remove('hidden')
+    }
   })
 </script>

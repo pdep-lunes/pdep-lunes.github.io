@@ -24,13 +24,14 @@ const { title, description } = Astro.props;
     </main>
     <Footer />
   <script>
-    document.body.addEventListener("click", (e) => {
+    document.addEventListener("click", (e) => {
       const btn = (e.target as Element).closest<HTMLButtonElement>("[data-copy-btn]");
       if (!btn) return;
       const pre = btn.closest("pre");
       if (!pre) return;
       const text = pre.querySelector("code")?.innerText ?? pre.innerText;
       navigator.clipboard.writeText(text).then(() => {
+        console.log("Texto copiado al portapapeles");
         btn.textContent = "✓ Copiado";
         setTimeout(() => { btn.textContent = "Copiar"; }, 1500);
       }).catch(() => {
