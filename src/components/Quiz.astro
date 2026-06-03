@@ -1,0 +1,144 @@
+---
+import { highlightCode } from '@lib/highlight'
+
+interface Option {
+  text: string
+  correct?: boolean
+  explanation?: string
+}
+
+interface Props {
+  question: string
+  options: Option[]
+  code?: string
+  lang?: string
+}
+
+const { question, options, code, lang = 'haskell' } = Astro.props
+
+const highlightedCode = code ? await highlightCode(code, lang) : null
+
+const correctOption = options.find(o => o.correct)
+---
+
+<div
+  class="my-6 border-l-[3px] rounded-r-lg px-4 py-3 bg-gray-50 dark:bg-gray-800/40 border-gray-200 dark:border-gray-700 quiz-container"
+  data-quiz
+>
+  <div class="flex gap-2 items-start mb-3">
+    <span class="text-base leading-5 mt-0.5 select-none">🤔</span>
+    <div class="flex-1 min-w-0">
+      <div class="text-xs font-semibold text-black dark:text-white mb-1.5">Chequeo rápido</div>
+      {highlightedCode && (
+        <div
+          class="rounded-md overflow-hidden mb-2 [&_pre]:!m-0 [&_pre]:!rounded-md [&_pre]:p-3 [&_pre]:text-xs [&_pre]:leading-relaxed"
+          set:html={highlightedCode}
+        />
+      )}
+      <p class="text-sm text-gray-600 dark:text-gray-400 m-0">{question}</p>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap gap-1.5 pl-6" data-options>
+    {options.map((opt) => (
+      <button
+        class="quiz-option px-3 py-1 rounded-full border-[1.5px] border-gray-300 text-gray-600 bg-white dark:bg-gray-900 dark:border-gray-600 dark:text-gray-300 text-xs cursor-pointer hover:border-gray-400 transition-colors font-mono"
+        data-correct={opt.correct ? '' : undefined}
+        data-explanation={opt.correct ? (opt.explanation ?? '') : undefined}
+      >
+        {opt.text}
+      </button>
+    ))}
+  </div>
+
+  <p
+    class="quiz-explanation text-xs pl-6 mt-2 leading-relaxed hidden"
+    data-explanation
+  />
+</div>
+
+<style>
+  .quiz-container[data-answered="correct"] {
+    border-color: #6ee7b7;
+    background-color: #f0fdf4;
+  }
+  .quiz-container[data-answered="wrong"] {
+    border-color: #fca5a5;
+    background-color: #fff8f8;
+  }
+
+  .quiz-option[data-state="selected-correct"] {
+    border-color: #6ee7b7;
+    background-color: #d1fae5;
+    color: #065f46;
+    cursor: default;
+    font-weight: 500;
+  }
+  .quiz-option[data-state="selected-wrong"] {
+    border-color: #fca5a5;
+    background-color: #fee2e2;
+    color: #b91c1c;
+    cursor: default;
+    font-weight: 500;
+  }
+  .quiz-option[data-state="correct-reveal"] {
+    border-color: #6ee7b7;
+    background-color: #d1fae5;
+    color: #065f46;
+    cursor: default;
+    font-weight: 500;
+  }
+  .quiz-option[data-state="dimmed"] {
+    border-color: #e5e7eb;
+    background-color: #f9fafb;
+    color: #9ca3af;
+    cursor: default;
+  }
+
+  .quiz-explanation[data-outcome="correct"] { color: #065f46; }
+  .quiz-explanation[data-outcome="wrong"]   { color: #991b1b; }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-quiz]').forEach((quiz) => {
+    let answered = false
+    const optionBtns = Array.from(
+      quiz.querySelectorAll<HTMLButtonElement>('[data-options] button')
+    )
+    const explanationEl = quiz.querySelector<HTMLElement>('[data-explanation]')
+
+    optionBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (answered) return
+        answered = true
+
+        const isCorrect = btn.hasAttribute('data-correct')
+        const correctBtn = optionBtns.find(b => b.hasAttribute('data-correct'))
+        const explanation = correctBtn?.dataset.explanation ?? ''
+
+        quiz.dataset.answered = isCorrect ? 'correct' : 'wrong'
+
+        optionBtns.forEach((b) => {
+          if (b === btn) {
+            b.dataset.state = isCorrect ? 'selected-correct' : 'selected-wrong'
+            b.textContent += isCorrect ? ' ✓' : ' ✗'
+          } else if (b === correctBtn && !isCorrect) {
+            b.dataset.state = 'correct-reveal'
+            b.textContent += ' ✓'
+          } else {
+            b.dataset.state = 'dimmed'
+          }
+        })
+
+        if (explanationEl && explanation) {
+          const correctText = correctBtn?.textContent?.replace(' ✓', '') ?? ''
+          explanationEl.textContent = isCorrect
+            ? `¡Correcto! — ${explanation}`
+            : `La respuesta correcta es "${correctText}". ${explanation}`
+          explanationEl.dataset.outcome = isCorrect ? 'correct' : 'wrong'
+          explanationEl.classList.remove('hidden')
+        }
+      })
+    })
+  })
+</script>
