@@ -23,3 +23,4 @@ pnpm-debug.log*
 
 # brainstorming session files
 .superpowers/
+docs/superpowers/
