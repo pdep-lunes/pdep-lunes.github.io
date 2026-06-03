@@ -33,6 +33,9 @@ const { title, description } = Astro.props;
       navigator.clipboard.writeText(text).then(() => {
         btn.textContent = "✓ Copiado";
         setTimeout(() => { btn.textContent = "Copiar"; }, 1500);
+      }).catch(() => {
+        btn.textContent = "Error al copiar";
+        setTimeout(() => { btn.textContent = "Copiar"; }, 1500);
       });
     });
 
