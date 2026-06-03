@@ -39,50 +39,58 @@ const fuseData = posts.map(post => ({
 <script>
   import Fuse from "fuse.js";
 
-  document.querySelectorAll<HTMLDivElement>("[data-search-root]").forEach(root => {
-    const id = root.dataset.searchRoot!;
-    const dataEl = root.querySelector<HTMLScriptElement>(`[data-search-data="${id}"]`);
-    if (!dataEl) return;
+  function initSearch() {
+    document.querySelectorAll<HTMLDivElement>("[data-search-root]").forEach(root => {
+      if (root.dataset.searchInitialized) return;
+      root.dataset.searchInitialized = "true";
 
-    const data: { slug: string; title: string; description: string; tags: string }[] =
-      JSON.parse(dataEl.textContent ?? "[]");
+      const id = root.dataset.searchRoot!;
+      const dataEl = root.querySelector<HTMLScriptElement>(`[data-search-data="${id}"]`);
+      if (!dataEl) return;
 
-    const input = root.querySelector<HTMLInputElement>(`#search-${id}`);
-    const list = root.querySelector<HTMLUListElement>(`#list-${id}`);
-    const empty = root.querySelector<HTMLParagraphElement>(`#empty-${id}`);
-    if (!input || !list || !empty) return;
+      const data: { slug: string; title: string; description: string; tags: string }[] =
+        JSON.parse(dataEl.textContent ?? "[]");
 
-    const items = Array.from(list.querySelectorAll<HTMLLIElement>("li[data-slug]"));
+      const input = root.querySelector<HTMLInputElement>(`#search-${id}`);
+      const list = root.querySelector<HTMLUListElement>(`#list-${id}`);
+      const empty = root.querySelector<HTMLParagraphElement>(`#empty-${id}`);
+      if (!input || !list || !empty) return;
 
-    const fuse = new Fuse(data, {
-      keys: [
-        { name: "title", weight: 3 },
-        { name: "tags", weight: 2 },
-        { name: "description", weight: 1 },
-      ],
-      threshold: 0.4,
-      includeScore: true,
-    });
+      const items = Array.from(list.querySelectorAll<HTMLLIElement>("li[data-slug]"));
 
-    input.addEventListener("input", () => {
-      const query = input.value.trim();
-      if (!query) {
-        items.forEach(item => item.classList.remove("hidden"));
-        empty.classList.add("hidden");
-        return;
-      }
-
-      const results = fuse.search(query);
-      const matchedSlugs = new Set(results.map(r => r.item.slug));
-
-      let visible = 0;
-      items.forEach(item => {
-        const matches = matchedSlugs.has(item.dataset.slug ?? "");
-        item.classList.toggle("hidden", !matches);
-        if (matches) visible++;
+      const fuse = new Fuse(data, {
+        keys: [
+          { name: "title", weight: 3 },
+          { name: "tags", weight: 2 },
+          { name: "description", weight: 1 },
+        ],
+        threshold: 0.4,
+        includeScore: true,
       });
 
-      empty.classList.toggle("hidden", visible > 0);
+      input.addEventListener("input", () => {
+        const query = input.value.trim();
+        if (!query) {
+          items.forEach(item => item.classList.remove("hidden"));
+          empty.classList.add("hidden");
+          return;
+        }
+
+        const results = fuse.search(query);
+        const matchedSlugs = new Set(results.map(r => r.item.slug));
+
+        let visible = 0;
+        items.forEach(item => {
+          const matches = matchedSlugs.has(item.dataset.slug ?? "");
+          item.classList.toggle("hidden", !matches);
+          if (matches) visible++;
+        });
+
+        empty.classList.toggle("hidden", visible > 0);
+      });
     });
-  });
+  }
+
+  document.addEventListener("astro:after-swap", initSearch);
+  initSearch();
 </script>
