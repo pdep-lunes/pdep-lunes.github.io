@@ -46,7 +46,7 @@ const highlightedCode = code ? await highlightCode(code, lang) : null
   <div class="flex flex-wrap gap-1.5 pl-0" data-options>
     {options.map((opt) => (
       <button
-        class="quiz-option px-3 py-1 rounded-full border-[1.5px] border-gray-300 text-gray-600 bg-white dark:bg-gray-900 dark:border-gray-600 dark:text-gray-300 text-xs cursor-pointer hover:border-gray-400 transition-colors font-mono text-left"
+        class="quiz-option px-3 py-1 rounded-full border-[1.5px] border-gray-300 text-gray-600 bg-white dark:bg-gray-900 dark:border-gray-600 dark:text-gray-300 text-xs cursor-pointer hover:border-gray-400 transition-colors font-mono text-left text-balance"
         data-correct={opt.correct ? '' : undefined}
         data-option-explanation={opt.correct ? (opt.explanation ?? '') : undefined}
         data-original-text={opt.text}

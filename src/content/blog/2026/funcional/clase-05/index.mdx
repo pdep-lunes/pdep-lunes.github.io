@@ -4,6 +4,7 @@ date: "2026-05-11"
 description: "Funciones anónimas, currificación, recursividad y fold en Haskell"
 tags: [funcional, práctica, fold, recursividad, currificación, lambda]
 ---
+import Quiz from '@components/Quiz.astro';
 
 ## Tarea para la clase que viene:
 
@@ -484,6 +485,62 @@ guarderiaPdePerritos = UnaGuarderia {
   ]
 }
 ```
+
+---
+
+## Repaso con preguntas
+
+<Quiz
+  code={`map (\\x -> x + 1) [1, 2, 3]
+  map (subtract 1) [1, 2, 3]`}
+  lang="haskell"
+  question="Lambda vs aplicación parcial - ¿son equivalentes?"
+  options={[
+    { text: "La primera devuelve [0, 1, 2] y la segunda falla" },
+    { text: "Ambas devuelven [0, 1, 2]", correct: true, explanation: "La lambda en cuestión y subtract son equivalentes" },
+    { text: "La primera falla porque `-` no se puede aplicar parcialmente" },
+    { text: "Devuelven resultados distintos por el orden de los argumentos" }
+  ]}
+/>
+
+<Quiz
+  code={`sumar :: Int -> Int -> Int
+  sumar x y = x + y
+  
+  :t sumar 3`}
+  lang="haskell"
+  question="Currificación - ¿qué devuelve el tipo de `sumar 3`?"
+  options={[
+    { text: "Int" },
+    { text: "Int -> Int -> Int" },
+    { text: "Int -> Int", correct: true, explanation: "Al recibir un argumento, devuelve una función que toma el segundo argumento" },
+    { text: "Error de tipos" }
+  ]}
+/>
+
+<Quiz
+  code={`foldr (-) 0 [1, 2, 3]
+  foldl (-) 0 [1, 2, 3]`}
+  lang="haskell"
+  question="Foldr vs Foldl - ¿qué devuelven?"
+  options={[
+    { text: "Ambas dan -6" },
+    { text: "Ambas dan 2" },
+    { text: "La primera da -6, la segunda da 2" },
+    { text: "La primera da 2, la segunda da -6", correct: true, explanation: "La usar foldr la operación termina siendo `1 - (2 - (3 - 0)) = 2` mientras que con foldl es `((0 - 1) - 2) - 3 = -6`" },
+  ]}
+/>
+
+<Quiz
+  code={`foldr1 max []`}
+  lang="haskell"
+  question="Foldr1 con lista vacía - ¿qué devuelve?"
+  options={[
+    { text: "Devuelve 0" },
+    { text: "No compila" },
+    { text: "Compila pero tira un error al ejecutar", correct: true, explanation: "foldr1 requiere al menos un elemento en la lista" },
+  ]}
+/>
 
 ## Links Útiles
 

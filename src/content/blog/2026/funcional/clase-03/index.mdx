@@ -4,6 +4,7 @@ date: "2026-04-27"
 description: "Uso de guardas y definición de tipos con data"
 tags: [funcional, guardas, data, pattern-matching]
 ---
+import Quiz from '@components/Quiz.astro';
 
 ## Tarea para la clase que viene:
 
@@ -170,6 +171,77 @@ Comenzamos el ejercicio y trabajamos:
 - Pattern matching → estructura
 - Data → tipos propios
 - Código declarativo y sin repetición
+
+---
+
+## Repaso con preguntas
+
+<Quiz
+  question="¿Cuál es la forma correcta de verificar si un festejo es ligero (menos de 30 regalos)?"
+  options={[
+    { text: "esLigero (_, _, _, 30) = True / esLigero _ = False" },
+    { text: "esLigero (_, _, _, regalos) | regalos < 30 = True | otherwise = False" },
+    { text: "esLigero (_, _, _, regalos) = regalos < 30", correct: true, explanation: "Devolver True o False con guardas es un mal uso de booleanos. La expresión regalos < 30 ya es un booleano, así que se puede retornar directamente." },
+    { text: "Las tres son equivalentes y correctas" }
+  ]}
+/>
+
+<Quiz
+  question="¿Qué ventaja tiene data Festejo = UnFestejo ... sobre type Festejo = (...)?"
+  options={[
+    { text: "Ninguna, son equivalentes" },
+    { text: "data ocupa menos memoria" },
+    { text: "data crea un tipo real que restringe qué puede recibir una función", correct: true, explanation: "Con type solo creamos un alias: cualquier tupla con la misma forma puede pasarse donde se espera un Festejo. Con data creamos un tipo propio y el compilador impide que pasen, por ejemplo, una Torta donde se espera un Festejo." },
+    { text: "type es más seguro porque es más estricto" }
+  ]}
+/>
+
+<Quiz
+  question="¿Qué devuelve cantidadDeRegalos festejoOrne?"
+  code={`data Festejo = UnFestejo {
+    nombre :: String,
+    cantidadDeRegalos :: Int
+} deriving Show
+
+festejoOrne = UnFestejo { nombre = "Orne", cantidadDeRegalos = 50 }`}
+  lang="haskell"
+  options={[
+    { text: "Error, cantidadDeRegalos no es una función" },
+    { text: "festejoOrne" },
+    { text: "50", correct: true, explanation: "El record syntax genera automáticamente funciones accessor para cada campo. cantidadDeRegalos es una función de tipo Festejo -> Int, y al aplicarla a festejoOrne devuelve 50." },
+    { text: "No compila sin deriving Eq" }
+  ]}
+/>
+
+<Quiz
+  question="¿Cuánto vale cantidadDeRegalos festejoOrne después de llamar a agregarRegalos?"
+  code={`festejoOrne :: Festejo
+festejoOrne = UnFestejo “Orne” (26,4) “Parque aéreo” 50
+
+agregarRegalos :: Festejo -> Int -> Festejo
+agregarRegalos unFestejo n =
+    unFestejo { cantidadDeRegalos = cantidadDeRegalos unFestejo + n }
+
+> agregarRegalos festejoOrne 10
+> cantidadDeRegalos festejoOrne`}
+  lang="haskell"
+  options={[
+    { text: "60, el festejo fue modificado" },
+    { text: "50, festejoOrne no cambió", correct: true, explanation: "En Haskell no hay estado. agregarRegalos devuelve un nuevo Festejo con 60 regalos, pero festejoOrne sigue siendo el mismo valor original con 50." },
+    { text: "Error en runtime" },
+    { text: "10" }
+  ]}
+/>
+
+<Quiz
+  question="¿Qué es otherwise en Haskell?"
+  options={[
+    { text: "Una palabra clave especial del compilador" },
+    { text: "Un sinónimo de True que siempre se cumple y cumple la guarda", correct: true, explanation: "otherwise = True. Se usa por claridad expresiva, pero podría reemplazarse por True directamente. La guarda que lo contiene se evalúa solo si todas las anteriores fueron False." },
+    { text: "Lo mismo que el patrón _ en pattern matching" },
+    { text: "Una función que evalúa si ninguna guarda anterior fue True" }
+  ]}
+/>
 
 ## Link útiles
 
