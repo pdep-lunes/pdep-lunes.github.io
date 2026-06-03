@@ -23,5 +23,24 @@ const { title, description } = Astro.props;
       <slot />
     </main>
     <Footer />
+  <script>
+    document.body.addEventListener("click", (e) => {
+      const btn = (e.target as Element).closest<HTMLButtonElement>("[data-copy-btn]");
+      if (!btn) return;
+      const pre = btn.closest("pre");
+      if (!pre) return;
+      const text = pre.querySelector("code")?.innerText ?? pre.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = "✓ Copiado";
+        setTimeout(() => { btn.textContent = "Copiar"; }, 1500);
+      });
+    });
+
+    if (!navigator.clipboard) {
+      document.querySelectorAll<HTMLElement>("[data-copy-btn]").forEach((btn) => {
+        btn.style.display = "none";
+      });
+    }
+  </script>
   </body>
 </html>
