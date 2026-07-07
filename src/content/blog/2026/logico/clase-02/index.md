@@ -6,7 +6,9 @@ tags: [logico, forall, functores, pattern-matching, polimorfismo, negacion]
 ---
 
 ## Tarea:
-- Practicar con Miyuki y/o [ejercicios de lógico de la página](https://www.pdep.com.ar/material/gu%C3%ADa-de-ejercicios#h.yumhnbyin5hn)
+- Comenzar el [TP de Lógico]().
+- Realizar el ejercicio [La Biblioteca](https://docs.google.com/document/d/1oz2WbVi3lT_pxBy7r7Px0tD3gb8DjSC64l5LvqMQ3V0/edit?usp=sharing). Podés encontrar una posible solución [acá](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/logico/clase-02/clase02.pl).
+- Practicar con Miyuki y/o [ejercicios de lógico de la página](https://www.pdep.com.ar/material/gu%C3%ADa-de-ejercicios#h.yumhnbyin5hn).
 
 ## ¿Qué vimos hoy?
 - Negación
