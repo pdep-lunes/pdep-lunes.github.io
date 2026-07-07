@@ -18,7 +18,7 @@ tags: [logico, forall, functores, pattern-matching, polimorfismo, negacion]
 
 ## Repaso clase pasada
 
-```
+```prolog
 elabora(guille, empanadaDeCarne).
 elabora(guille, empanadaDeVerdura).
 elabora(vale, papasFritas).
@@ -71,7 +71,7 @@ seMereceMichelin(Restaurante):-
 
 Queremos saber si un chef es de bajo perfil. Un chef es de bajo perfil si trabaja en algún restaurante, pero no es crack.
 
-```
+```prolog
 chefDeBajoPerfil(Chef) :-
     trabaja(Chef, _),
     not(esCrack(Chef)).
@@ -98,7 +98,7 @@ forall(antecedente, consecuente).
 
 Para que el `forall` responda verdadero, tiene que ocurrir que **para todo antecedente que ocurra, su consecuente ocurre**.
 
-Por ejemplo, al definir el predicado `chefMichelinero/1` nos responde si todos los restaurantes en los un chef trabajó, se merecen la Michelin. 
+Por ejemplo, al definir el predicado `chefMichelinero/1` nos responde si todos los restaurantes en los que un chef trabajó, se merecen la Michelin. 
 
 ```prolog
 chefMichelinero(Chef) :-
@@ -126,7 +126,7 @@ Los *functores* son individuos compuestos y tienen:
 - Una aridad.
 
 En nuestra base de conocimientos teníamos “platos clásicos” (individuos simples), ahora también hay “platos de autor” (individuos compuestos), que pueden ser:
-- `deconstruccion(PlatoClásico, CantidadDeTexturas)`
+- `deconstruccion(PlatoClasico, CantidadDeTexturas)`
 - `ahumado(Ingrediente, TipoDeMadera)`
 - `coccionAlVacio(Ingrediente, Horas)` 
 - `espuma(Sabor, Textura)`
@@ -134,7 +134,7 @@ En nuestra base de conocimientos teníamos “platos clásicos” (individuos si
 Por ejemplo:
 
 
-```
+```prolog
 elabora(guille, deconstruccion(tiramisu, 5)). 
 elabora(guille, ahumado(berenjena, nogal)). 
 elabora(mar, coccionAlVacio(papa, 2)). 
@@ -187,10 +187,10 @@ esGourmet(lemonPie).
 esGourmet(deconstruccion(_, Texturas)) :-
     Texturas > 4.
 
-esGourmet(coccionAlVacio(calabaza, _)).
-
 esGourmet(coccionAlVacio(_, Horas)) :-
     Horas >= 2.
+
+esGourmet(coccionAlVacio(calabaza, _)).
 
 esGourmet(ahumado(_, nogal)).
 
@@ -200,9 +200,7 @@ esGourmet(espuma(_, gelificada)).
 
 Tenemos un par de cosas interesantes acá. 🤔
 
-Primero, el orden importa, al haber *pattern matching* debemos ir de lo más particular a lo más general. En el caso de la cocción al vacío, si invertimos el orden actual, cuando haya una calabaza con cocción de 1 hora, el ingrediente quedaría atrapado por la variable anónima y como solo tiene 1 hora de cocción no sería gourmet cuando sí debería serlo por ser una calabaza.
-
-Segundo, si prestamos atención a cómo definimos el predicado `esGourmet`, podemos ver que estamos **deconstruyendo** (o abriendo) a los functores que representan el tipo de los platos.  
+Si prestamos atención a cómo definimos el predicado `esGourmet`, podemos ver que estamos **deconstruyendo** (o abriendo) a los functores que representan el tipo de los platos.  
 Por ejemplo, en esta claúsula, el tipo va a unificar sólo con aquellos platos que sean de cocción al vacío:
 
 ```prolog
@@ -214,13 +212,13 @@ esGourmet(coccionAlVacio(_, Horas)) :-
 Además, cada functor va a "saber" con qué claúsula del predicado quedarse.  
 Todo esto gracias a que tenemos *pattern matching*. 🎉
 
-Por último, podemos ver como al predicado `esGourmet` no le importa para nada que *forma* puede llegar a tener el functor del tipo del plato.  
+Entonces, podemos ver como al predicado `esGourmet` no le importa para nada que *forma* puede llegar a tener el functor del tipo del plato.  
 Al hecho de tratar variables indistintamente de su forma lo llamamos **polimorfismo** 💗 y va a ser un concepto muy importante y útil desde ahora hasta siempre. 😱
 
 ## Links útiles:
 
 - [Video de la clase de 2022](https://drive.google.com/file/d/19BgJqAjgu4n4cMCt7tMj1Ytiv3evN1Nk/view?usp=sharing)
-- [Código de la clase 2022](https://github.com/pdep-lunes/pdep-clases-2023/blob/main/Logico/Clase02/clase02.pl) 
+- [Código de la clase 2023](https://github.com/pdep-lunes/pdep-clases/blob/main/2023/logico/clase-02/clase02.pl) 
 - [Generación](http://wiki.uqbar.org/wiki/articles/paradigma-logico---generacion.html)
 - [Forall](http://wiki.uqbar.org/wiki/articles/paradigma-logico---existe-vs-para-todo.html)
 - [Functores](http://wiki.uqbar.org/wiki/articles/paradigma-logico---functores.html)
