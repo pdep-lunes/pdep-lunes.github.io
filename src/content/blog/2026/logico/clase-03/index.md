@@ -6,7 +6,7 @@ tags: [logico, is, listas, findall, ilogico]
 ---
 
 ## Tarea: 
-- Hacer las correcciones de la primera entrega del TP grupal y realizar la [segunda entrega](https://docs.google.com/document/d/1al0EqorRJrMCMQXm1GoXxWo_2VWK5pSMX9RgqoJlyVY/edit?tab=t.0#heading=h.m5ixcxp8xqc) para el lunes pos vacaciones (04/08).
+- Hacer las correcciones de la primera entrega del TP grupal y realizar la [segunda entrega](https://docs.google.com/document/d/1al0EqorRJrMCMQXm1GoXxWo_2VWK5pSMX9RgqoJlyVY/edit?tab=t.0#heading=h.m5ixcxp8xqc) para el lunes 24/08.
 - Practicar con [Miyuki](https://github.com/miyukiproject/miyuki/wiki/Instalaci%C3%B3n).
 - ¡Estudiar para el parcial! Pueden practicar con todos los que aparezcan en la [página de PdeP](https://www.pdep.com.ar/material/parciales), empezando por los que tengan resolución, para que puedan ir chequeando. De esa lista recomendamos que prioricen, luego de que hagan los que tienen resolución, [Steam Summer Sale](https://drive.google.com/file/d/1xJNQzdkVdGVQcd_y4uTUKWyf0pt-OJSH/view?usp=drive_link), [Pulp Fiction](https://docs.google.com/document/d/15mo_2391atBqMjcYzLtKvGG6JiPzjbeyEGVlwZjv4B8/edit#heading=h.qr1tbl1vrwzf) y [Rey Leon](https://drive.google.com/file/d/1x4X-0AfaKK3Zv-twZfsviXRlH6Xg2Oxt/view).
 
