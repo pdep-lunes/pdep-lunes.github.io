@@ -197,6 +197,4 @@ Se puede heredar tanto de clases abstractas como de clases concretas.
 
 - [Clase 2026](https://github.com/pdep-lunes/pdep-clases/tree/main/2026/objetos/clase-5)
 - [Video de la clase 2022](https://drive.google.com/file/d/1AQmfdgtekWMfe43T_vyqoSgqTVMf1GMy/view?usp=sharing)
-- [Código de la clase 2022](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase05/animales_repaso.wlk) 
-- [Diagrama de clases de la clase 2022](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase05/out/animales/animales.png) 
-- [Código del diagrama de clases 2022](https://github.com/pdep-lunes/pdep-clases-2024/blob/main/Objetos/Clase05/animales.plantuml) 
+- [Clase 2024](https://github.com/pdep-lunes/pdep-clases/tree/main/2024/objetos/clase-05) 
